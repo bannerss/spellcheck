@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "E:\\codeProjects\\spell-check\\dist\\logs\\debug\\.02590c843f0683adecbcc5eb34b90ec0d611d89f-audit.json",
+    "files": [
+        {
+            "date": 1655288851177,
+            "name": "E:\\codeProjects\\spell-check\\dist\\logs\\debug\\2022-06-15.log",
+            "hash": "a9c3073d5688f1e7e17887a4479c829d37d77facb0a375327f952c7a3d531c86"
+        }
+    ],
+    "hashType": "sha256"
+}

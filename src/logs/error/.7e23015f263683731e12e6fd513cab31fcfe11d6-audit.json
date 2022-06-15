@@ -1,0 +1,25 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "E:\\codeProjects\\spell-check\\src\\logs\\error\\.7e23015f263683731e12e6fd513cab31fcfe11d6-audit.json",
+    "files": [
+        {
+            "date": 1655105862293,
+            "name": "E:\\codeProjects\\spell-check\\src\\logs\\error\\2022-06-13.log",
+            "hash": "b06f535190ba498f46ee4f6e079d4d65d7c7d80822b5ff493e46c898369216a5"
+        },
+        {
+            "date": 1655157874158,
+            "name": "E:\\codeProjects\\spell-check\\src\\logs\\error\\2022-06-14.log",
+            "hash": "ac9a4492f90aec3d177deaf28c176eda42eebe653cf21fbe988a80619eb6bd47"
+        },
+        {
+            "date": 1655281356232,
+            "name": "E:\\codeProjects\\spell-check\\src\\logs\\error\\2022-06-15.log",
+            "hash": "8407e0c14e661116b6dec717ad10e6a781ab08b1343669d43ffc4be9faa21c30"
+        }
+    ],
+    "hashType": "sha256"
+}
