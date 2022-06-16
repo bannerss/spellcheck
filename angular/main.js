@@ -1310,7 +1310,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 var environment = {
     production: false,
-    apiUrl: "https://modspellcheck.azurewebsites.net/api"
+    apiUrl: "http://modspellcheck.azurewebsites.net/api"
 };
 /*
  * In development mode, to ignore zone related error stack frames such as
