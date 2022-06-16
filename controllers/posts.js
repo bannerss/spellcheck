@@ -57,7 +57,10 @@ exports.updatePost = (req, res, next) => {
 exports.getPosts = (req, res, next) => {
   const pageSize = +req.query.pagesize;
   const currentPage = +req.query.page;
-  const postQuery = Post.find();
+  const postQuery = [{ title: "post title",
+  content: "post content",
+  imagePath: "",
+  creator: " creatorbanners"}]
   let fetchedPosts;
   if (pageSize && currentPage) {
     postQuery.skip(pageSize * (currentPage - 1)).limit(pageSize);
