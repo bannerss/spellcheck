@@ -1,77 +1,71 @@
-const path = require("path");
-const express = require("express");
-const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
-
-const postsRoutes = require("./routes/posts");
-const userRoutes = require("./routes/user");
-
-const app = express();
-
-mongoose
-  .connect(
-    "mongodb+srv://max:" +
-      process.env.MONGO_ATLAS_PW +
-      "@cluster0-ntrwp.mongodb.net/node-angular"
-  )
-  .then(() => {
-    console.log("Connected to mongoose database!");
-  })
-  .catch(() => {
-    console.log("mongoose Connection failed!");
-  });
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/images", express.static(path.join(__dirname, "images")));
-app.use("/", express.static(path.join(__dirname, "angular")));
-
-app.use(function(req, res, next) {
-  console.log = function() {}
-    if (req.hostname === 'izkor.mod.gov.il' || req.hostname === 'izkor.gov.il' || req.hostname === 'www.izkor.mod.gov.il') {
-      return res.redirect(301, 'https://www.izkor.gov.il/' + req.originalUrl);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
+const compression_1 = tslib_1.__importDefault(require("compression"));
+const cookie_parser_1 = tslib_1.__importDefault(require("cookie-parser"));
+const cors_1 = tslib_1.__importDefault(require("cors"));
+const express_1 = tslib_1.__importDefault(require("express"));
+const helmet_1 = tslib_1.__importDefault(require("helmet"));
+const hpp_1 = tslib_1.__importDefault(require("hpp"));
+const morgan_1 = tslib_1.__importDefault(require("morgan"));
+const swagger_jsdoc_1 = tslib_1.__importDefault(require("swagger-jsdoc"));
+const swagger_ui_express_1 = tslib_1.__importDefault(require("swagger-ui-express"));
+const _config_1 = require("@config");
+const error_middleware_1 = tslib_1.__importDefault(require("@middlewares/error.middleware"));
+const logger_1 = require("@utils/logger");
+class App {
+    constructor(routes) {
+        this.app = (0, express_1.default)();
+        this.env = _config_1.NODE_ENV || 'development';
+        this.port = _config_1.PORT || 3000;
+        this.initializeMiddlewares();
+        this.initializeRoutes(routes);
+        this.initializeSwagger();
+        this.initializeErrorHandling();
     }
-    /*if(req.hostname.indexOf('https://www.izkor.gov.il') < 0 && req.query.utm_source)
-    {
-      return res.redirect(301, 'https://www.izkor.gov.il/' + req.originalUrl);
-    }*/
-    res.setHeader('X-XSS-Protection', '1; mode=block');
-    res.setHeader('X-Frame-Options', 'sameorigin');  // deny
-    res.setHeader('X-Content-Type-Options', 'nosniff');  //disable nosniff? for MIME mismatch?
-    res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-    res.setHeader("Pragma", "no-cache");
-    res.setHeader("Expires", "0");
-    //res.setHeader('Strict-Transport-Security', 'max-age=31536000');
-
-    //res.setHeader('Cache-Control', 'no-cache');
-
-
-    //handle cors:
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader('Access-Control-Request-Method', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, MERGE, PATCH, DELETE');
-    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    res.setHeader('Access-Control-Allow-Credentials', "true");
-    next();
-});
-// app.use((req, res, next) => {
-//   res.setHeader("Access-Control-Allow-Origin", "*");
-//   res.setHeader(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-//   );
-//   res.setHeader(
-//     "Access-Control-Allow-Methods",
-//     "GET, POST, PATCH, PUT, DELETE, OPTIONS"
-//   );
-//   next();
-// });
-
-app.use("/api/posts", postsRoutes);
-app.use("/api/user", userRoutes);
-app.use((req, res, next) => {
-  console.log("index.html");
-  res.sendFile(path.join(__dirname, "angular", "index.html"));
-});
-
-module.exports = app;
+    listen() {
+        this.app.listen(this.port, () => {
+            logger_1.logger.info(`=================================`);
+            logger_1.logger.info(`======= ENV: ${this.env} =======`);
+            logger_1.logger.info(`🚀 App listening on the port ${this.port}`);
+            logger_1.logger.info(`=================================`);
+        });
+    }
+    getServer() {
+        return this.app;
+    }
+    initializeMiddlewares() {
+        this.app.use((0, morgan_1.default)(_config_1.LOG_FORMAT, { stream: logger_1.stream }));
+        this.app.use((0, cors_1.default)({ origin: _config_1.ORIGIN, credentials: _config_1.CREDENTIALS }));
+        this.app.use((0, hpp_1.default)());
+        this.app.use((0, helmet_1.default)());
+        this.app.use((0, compression_1.default)());
+        this.app.use(express_1.default.json());
+        this.app.use(express_1.default.urlencoded({ extended: true }));
+        this.app.use((0, cookie_parser_1.default)());
+    }
+    initializeRoutes(routes) {
+        routes.forEach(route => {
+            this.app.use('/', route.router);
+        });
+    }
+    initializeSwagger() {
+        const options = {
+            swaggerDefinition: {
+                info: {
+                    title: 'REST API',
+                    version: '1.0.0',
+                    description: 'Example docs',
+                },
+            },
+            apis: ['swagger.yaml'],
+        };
+        const specs = (0, swagger_jsdoc_1.default)(options);
+        this.app.use('/api-docs', swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(specs));
+    }
+    initializeErrorHandling() {
+        this.app.use(error_middleware_1.default);
+    }
+}
+exports.default = App;
+//# sourceMappingURL=app.js.map
