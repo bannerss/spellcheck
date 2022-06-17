@@ -4108,9 +4108,9 @@ function toSubscriber(nextOrObserver, error, complete) {
 
 /***/ }),
 
-/***/ 4851:
+/***/ 1631:
 /*!******************************************************************!*\
-  !*** ./node_modules/@angular/animations/fesm2020/animations.mjs ***!
+  !*** ./node_modules/@angular/animations/fesm2015/animations.mjs ***!
   \******************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
@@ -5633,9 +5633,9 @@ var ɵPRE_STYLE = '!';
 
 /***/ }),
 
-/***/ 5787:
+/***/ 289:
 /*!***************************************************************!*\
-  !*** ./node_modules/@angular/animations/fesm2020/browser.mjs ***!
+  !*** ./node_modules/@angular/animations/fesm2015/browser.mjs ***!
   \***************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
@@ -5664,8 +5664,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createForOfIteratorHelper.js */ 5106);
 /* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ 8069);
 /* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ 8047);
-/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/animations */ 4851);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/animations */ 1631);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 3184);
 
 
 
@@ -8894,7 +8894,7 @@ var AnimationTransitionFactory = /*#__PURE__*/function () {
   }, {
     key: "build",
     value: function build(driver, element, currentState, nextState, enterClassName, leaveClassName, currentOptions, nextOptions, subInstructions, skipAstBuild) {
-      var _this$ast$options;
+      var _a;
 
       var errors = [];
       var transitionAnimationParams = this.ast.options && this.ast.options.params || EMPTY_OBJECT;
@@ -8908,7 +8908,7 @@ var AnimationTransitionFactory = /*#__PURE__*/function () {
       var isRemoval = nextState === 'void';
       var animationOptions = {
         params: applyParamDefaults(nextAnimationParams, transitionAnimationParams),
-        delay: (_this$ast$options = this.ast.options) === null || _this$ast$options === void 0 ? void 0 : _this$ast$options.delay
+        delay: (_a = this.ast.options) === null || _a === void 0 ? void 0 : _a.delay
       };
       var timelines = skipAstBuild ? [] : buildAnimationTimelines(driver, element, this.ast.animation, enterClassName, leaveClassName, currentStateStyles, nextStateStyles, animationOptions, subInstructions, errors);
       var totalTime = 0;
@@ -10228,8 +10228,9 @@ var TransitionAnimationEngine = /*#__PURE__*/function () {
   }, {
     key: "processLeaveNode",
     value: function processLeaveNode(element) {
-      var _element$classList,
-          _this28 = this;
+      var _this28 = this;
+
+      var _a;
 
       var details = element[REMOVAL_FLAG];
 
@@ -10250,7 +10251,7 @@ var TransitionAnimationEngine = /*#__PURE__*/function () {
         this._onRemovalComplete(element, details.setForRemoval);
       }
 
-      if ((_element$classList = element.classList) !== null && _element$classList !== void 0 && _element$classList.contains(DISABLED_CLASSNAME)) {
+      if ((_a = element.classList) === null || _a === void 0 ? void 0 : _a.contains(DISABLED_CLASSNAME)) {
         this.markElementAsDisabled(element, false);
       }
 
@@ -10602,11 +10603,11 @@ var TransitionAnimationEngine = /*#__PURE__*/function () {
         cloakAndComputeStyles(preStylesMap, _this30.driver, new Set(nodes), allPreStyleElements, _angular_animations__WEBPACK_IMPORTED_MODULE_8__["ɵPRE_STYLE"]);
       });
       replaceNodes.forEach(function (node) {
-        var _post$entries, _pre$entries;
+        var _a, _b;
 
         var post = postStylesMap.get(node);
         var pre = preStylesMap.get(node);
-        postStylesMap.set(node, new Map([].concat((0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_2__["default"])(Array.from((_post$entries = post === null || post === void 0 ? void 0 : post.entries()) !== null && _post$entries !== void 0 ? _post$entries : [])), (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_2__["default"])(Array.from((_pre$entries = pre === null || pre === void 0 ? void 0 : pre.entries()) !== null && _pre$entries !== void 0 ? _pre$entries : [])))));
+        postStylesMap.set(node, new Map([].concat((0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_2__["default"])(Array.from((_a = post === null || post === void 0 ? void 0 : post.entries()) !== null && _a !== void 0 ? _a : [])), (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_2__["default"])(Array.from((_b = pre === null || pre === void 0 ? void 0 : pre.entries()) !== null && _b !== void 0 ? _b : [])))));
       });
       var rootPlayers = [];
       var subPlayers = [];
@@ -11246,15 +11247,15 @@ function buildRootMap(roots, nodes) {
 }
 
 function addClass(element, className) {
-  var _element$classList2;
+  var _a;
 
-  (_element$classList2 = element.classList) === null || _element$classList2 === void 0 ? void 0 : _element$classList2.add(className);
+  (_a = element.classList) === null || _a === void 0 ? void 0 : _a.add(className);
 }
 
 function removeClass(element, className) {
-  var _element$classList3;
+  var _a;
 
-  (_element$classList3 = element.classList) === null || _element$classList3 === void 0 ? void 0 : _element$classList3.remove(className);
+  (_a = element.classList) === null || _a === void 0 ? void 0 : _a.remove(className);
 }
 
 function removeNodesAfterAnimationDone(engine, element, players) {
@@ -11954,9 +11955,9 @@ var WebAnimationsDriver = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ 4666:
+/***/ 6362:
 /*!**********************************************************!*\
-  !*** ./node_modules/@angular/common/fesm2020/common.mjs ***!
+  !*** ./node_modules/@angular/common/fesm2015/common.mjs ***!
   \**********************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
@@ -12057,7 +12058,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createSuper.js */ 2496);
 /* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ 8047);
 /* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ 8069);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 3184);
 
 
 
@@ -12687,10 +12688,11 @@ var PathLocationStrategy = /*#__PURE__*/function (_LocationStrategy) {
   }, {
     key: "historyGo",
     value: function historyGo() {
-      var _this$_platformLocati, _this$_platformLocati2;
-
       var relativePosition = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-      (_this$_platformLocati = (_this$_platformLocati2 = this._platformLocation).historyGo) === null || _this$_platformLocati === void 0 ? void 0 : _this$_platformLocati.call(_this$_platformLocati2, relativePosition);
+
+      var _a, _b;
+
+      (_b = (_a = this._platformLocation).historyGo) === null || _b === void 0 ? void 0 : _b.call(_a, relativePosition);
     }
   }]);
 
@@ -12848,10 +12850,11 @@ var HashLocationStrategy = /*#__PURE__*/function (_LocationStrategy2) {
   }, {
     key: "historyGo",
     value: function historyGo() {
-      var _this$_platformLocati3, _this$_platformLocati4;
-
       var relativePosition = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-      (_this$_platformLocati3 = (_this$_platformLocati4 = this._platformLocation).historyGo) === null || _this$_platformLocati3 === void 0 ? void 0 : _this$_platformLocati3.call(_this$_platformLocati4, relativePosition);
+
+      var _a, _b;
+
+      (_b = (_a = this._platformLocation).historyGo) === null || _b === void 0 ? void 0 : _b.call(_a, relativePosition);
     }
   }]);
 
@@ -12957,9 +12960,9 @@ var Location = /*#__PURE__*/function () {
   (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_4__["default"])(Location, [{
     key: "ngOnDestroy",
     value: function ngOnDestroy() {
-      var _this$_urlChangeSubsc;
+      var _a;
 
-      (_this$_urlChangeSubsc = this._urlChangeSubscription) === null || _this$_urlChangeSubsc === void 0 ? void 0 : _this$_urlChangeSubsc.unsubscribe();
+      (_a = this._urlChangeSubscription) === null || _a === void 0 ? void 0 : _a.unsubscribe();
       this._urlChangeListeners = [];
     }
     /**
@@ -13111,10 +13114,11 @@ var Location = /*#__PURE__*/function () {
   }, {
     key: "historyGo",
     value: function historyGo() {
-      var _this$_locationStrate, _this$_locationStrate2;
-
       var relativePosition = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-      (_this$_locationStrate = (_this$_locationStrate2 = this._locationStrategy).historyGo) === null || _this$_locationStrate === void 0 ? void 0 : _this$_locationStrate.call(_this$_locationStrate2, relativePosition);
+
+      var _a, _b;
+
+      (_b = (_a = this._locationStrategy).historyGo) === null || _b === void 0 ? void 0 : _b.call(_a, relativePosition);
     }
     /**
      * Registers a URL change listener. Use to catch updates performed by the Angular
@@ -13138,14 +13142,14 @@ var Location = /*#__PURE__*/function () {
       }
 
       return function () {
+        var _a;
+
         var fnIndex = _this5._urlChangeListeners.indexOf(fn);
 
         _this5._urlChangeListeners.splice(fnIndex, 1);
 
         if (_this5._urlChangeListeners.length === 0) {
-          var _this5$_urlChangeSubs;
-
-          (_this5$_urlChangeSubs = _this5._urlChangeSubscription) === null || _this5$_urlChangeSubs === void 0 ? void 0 : _this5$_urlChangeSubs.unsubscribe();
+          (_a = _this5._urlChangeSubscription) === null || _a === void 0 ? void 0 : _a.unsubscribe();
           _this5._urlChangeSubscription = null;
         }
       };
@@ -16383,7 +16387,7 @@ var NgForOf = /*#__PURE__*/function () {
               // CAUTION: this logic is duplicated for production mode below, as the try-catch
               // is only present in development builds.
               this._differ = this._differs.find(value).create(this.ngForTrackBy);
-            } catch (_unused) {
+            } catch (_a) {
               throw new Error("Cannot find a differ supporting object '".concat(value, "' of type '").concat(getTypeName(value), "'. NgFor only supports binding to Iterables such as Arrays."));
             }
           } else {
@@ -18229,12 +18233,13 @@ var DatePipe = /*#__PURE__*/function () {
       var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'mediumDate';
       var timezone = arguments.length > 2 ? arguments[2] : undefined;
       var locale = arguments.length > 3 ? arguments[3] : undefined;
+
+      var _a;
+
       if (value == null || value === '' || value !== value) return null;
 
       try {
-        var _ref3;
-
-        return formatDate(value, format, locale || this.locale, (_ref3 = timezone !== null && timezone !== void 0 ? timezone : this.defaultTimezone) !== null && _ref3 !== void 0 ? _ref3 : undefined);
+        return formatDate(value, format, locale || this.locale, (_a = timezone !== null && timezone !== void 0 ? timezone : this.defaultTimezone) !== null && _a !== void 0 ? _a : undefined);
       } catch (error) {
         throw invalidPipeArgumentError(DatePipe, error.message);
       }
@@ -19427,7 +19432,7 @@ var BrowserViewportScroller = /*#__PURE__*/function () {
         // setter function.
 
         return !!scrollRestorationDescriptor && !!(scrollRestorationDescriptor.writable || scrollRestorationDescriptor.set);
-      } catch (_unused2) {
+      } catch (_a) {
         return false;
       }
     }
@@ -19436,7 +19441,7 @@ var BrowserViewportScroller = /*#__PURE__*/function () {
     value: function supportsScrolling() {
       try {
         return !!this.window && !!this.window.scrollTo && 'pageXOffset' in this.window;
-      } catch (_unused3) {
+      } catch (_a) {
         return false;
       }
     }
@@ -19584,9 +19589,9 @@ var XhrFactory = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babe
 
 /***/ }),
 
-/***/ 8987:
+/***/ 8784:
 /*!********************************************************!*\
-  !*** ./node_modules/@angular/common/fesm2020/http.mjs ***!
+  !*** ./node_modules/@angular/common/fesm2015/http.mjs ***!
   \********************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
@@ -19623,8 +19628,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js */ 8277);
 /* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ 8047);
 /* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ 8069);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/common */ 4666);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/common */ 6362);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ 4139);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs */ 2378);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 1133);
@@ -20114,9 +20119,9 @@ var STANDARD_ENCODING_REPLACEMENTS = {
 
 function standardEncoding(v) {
   return encodeURIComponent(v).replace(STANDARD_ENCODING_REGEX, function (s, t) {
-    var _STANDARD_ENCODING_RE;
+    var _a;
 
-    return (_STANDARD_ENCODING_RE = STANDARD_ENCODING_REPLACEMENTS[t]) !== null && _STANDARD_ENCODING_RE !== void 0 ? _STANDARD_ENCODING_RE : s;
+    return (_a = STANDARD_ENCODING_REPLACEMENTS[t]) !== null && _a !== void 0 ? _a : s;
   });
 }
 
@@ -20795,11 +20800,12 @@ var HttpRequest = /*#__PURE__*/function () {
   }, {
     key: "clone",
     value: function clone() {
-      var _update$context;
-
       var update = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-      // For method, url, and responseType, take the current value unless
+
+      var _a; // For method, url, and responseType, take the current value unless
       // it is overridden in the update hash.
+
+
       var method = update.method || this.method;
       var url = update.url || this.url;
       var responseType = update.responseType || this.responseType; // The body is somewhat special - a `null` value in update.body means
@@ -20817,7 +20823,7 @@ var HttpRequest = /*#__PURE__*/function () {
       var headers = update.headers || this.headers;
       var params = update.params || this.params; // Pass on context if needed
 
-      var context = (_update$context = update.context) !== null && _update$context !== void 0 ? _update$context : this.context; // Check whether the caller has asked to add headers.
+      var context = (_a = update.context) !== null && _a !== void 0 ? _a : this.context; // Check whether the caller has asked to add headers.
 
       if (update.setHeaders !== undefined) {
         // Set every requested header.
@@ -21856,14 +21862,6 @@ JsonpInterceptor.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_
     }];
   }, null);
 })();
-/**
- * @license
- * Copyright Google LLC All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-
 
 var XSSI_PREFIX = /^\)\]\}',?\n/;
 /**
@@ -22731,9 +22729,9 @@ var XhrFactory = _angular_common__WEBPACK_IMPORTED_MODULE_12__.XhrFactory;
 
 /***/ }),
 
-/***/ 2560:
+/***/ 3184:
 /*!******************************************************!*\
-  !*** ./node_modules/@angular/core/fesm2020/core.mjs ***!
+  !*** ./node_modules/@angular/core/fesm2015/core.mjs ***!
   \******************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
@@ -23108,19 +23106,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_toArray_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/toArray.js */ 609);
 /* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createForOfIteratorHelper.js */ 5106);
 /* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js */ 8277);
-/* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/objectSpread2.js */ 5603);
-/* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_construct_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/construct.js */ 2162);
-/* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ 8047);
-/* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ 8069);
-/* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/inherits.js */ 4582);
-/* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createSuper.js */ 2496);
-/* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/wrapNativeSuper.js */ 8926);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! rxjs */ 2425);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! rxjs */ 2218);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! rxjs */ 2378);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! rxjs */ 8623);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! rxjs/operators */ 4514);
-
+/* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_construct_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/construct.js */ 2162);
+/* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ 8047);
+/* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ 8069);
+/* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/inherits.js */ 4582);
+/* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createSuper.js */ 2496);
+/* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/wrapNativeSuper.js */ 8926);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! rxjs */ 2425);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! rxjs */ 2218);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! rxjs */ 2378);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! rxjs */ 8623);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! rxjs/operators */ 4514);
 
 
 
@@ -23329,22 +23325,22 @@ var ERROR_DETAILS_PAGE_BASE_URL = 'https://angular.io/errors';
  */
 
 var RuntimeError = /*#__PURE__*/function (_Error) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(RuntimeError, _Error);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(RuntimeError, _Error);
 
-  var _super = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(RuntimeError);
+  var _super = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(RuntimeError);
 
   function RuntimeError(code, message) {
     var _this;
 
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, RuntimeError);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, RuntimeError);
 
     _this = _super.call(this, formatRuntimeError(code, message));
     _this.code = code;
     return _this;
   }
 
-  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(RuntimeError);
-}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_14__["default"])(Error));
+  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(RuntimeError);
+}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(Error));
 /**
  * Called to format a runtime error.
  * See additional info on the `message` argument type in the `RuntimeError` class description.
@@ -24468,6 +24464,48 @@ function getNgModuleDef(type, throwNotFound) {
   return ngModuleDef;
 }
 /**
+ * Special location which allows easy identification of type. If we have an array which was
+ * retrieved from the `LView` and that array has `true` at `TYPE` location, we know it is
+ * `LContainer`.
+ */
+
+
+var TYPE = 1;
+/**
+ * Below are constants for LContainer indices to help us look up LContainer members
+ * without having to remember the specific indices.
+ * Uglify will inline these when minifying so there shouldn't be a cost.
+ */
+
+/**
+ * Flag to signify that this `LContainer` may have transplanted views which need to be change
+ * detected. (see: `LView[DECLARATION_COMPONENT_VIEW])`.
+ *
+ * This flag, once set, is never unset for the `LContainer`. This means that when unset we can skip
+ * a lot of work in `refreshEmbeddedViews`. But when set we still need to verify
+ * that the `MOVED_VIEWS` are transplanted and on-push.
+ */
+
+var HAS_TRANSPLANTED_VIEWS = 2; // PARENT, NEXT, TRANSPLANTED_VIEWS_TO_REFRESH are indices 3, 4, and 5
+// As we already have these constants in LView, we don't need to re-create them.
+// T_HOST is index 6
+// We already have this constants in LView, we don't need to re-create it.
+
+var NATIVE = 7;
+var VIEW_REFS = 8;
+var MOVED_VIEWS = 9;
+/**
+ * Size of LContainer's header. Represents the index after which all views in the
+ * container will be inserted. We need to keep a record of current views so we know
+ * which views are already in the DOM (and don't need to be re-added) and so we can
+ * remove views from the DOM when they are no longer required.
+ */
+
+var CONTAINER_HEADER_OFFSET = 10; // Note: This hack is necessary so we don't erroneously get a circular dependency
+// failure based on types.
+
+var unusedValueExportToPlacateAjd$8 = 1;
+/**
  * @license
  * Copyright Google LLC All Rights Reserved.
  *
@@ -24477,7 +24515,6 @@ function getNgModuleDef(type, throwNotFound) {
 // Below are constants for LView indices to help us look up LView members
 // without having to remember the specific indices.
 // Uglify will inline these when minifying so there shouldn't be a cost.
-
 
 var HOST = 0;
 var TVIEW = 1;
@@ -24518,55 +24555,6 @@ var HEADER_OFFSET = 22;
 
 var TViewTypeAsString = ['Root', 'Component', 'Embedded' // 2
 ]; // Note: This hack is necessary so we don't erroneously get a circular dependency
-// failure based on types.
-
-var unusedValueExportToPlacateAjd$8 = 1;
-/**
- * @license
- * Copyright Google LLC All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-
-/**
- * Special location which allows easy identification of type. If we have an array which was
- * retrieved from the `LView` and that array has `true` at `TYPE` location, we know it is
- * `LContainer`.
- */
-
-var TYPE = 1;
-/**
- * Below are constants for LContainer indices to help us look up LContainer members
- * without having to remember the specific indices.
- * Uglify will inline these when minifying so there shouldn't be a cost.
- */
-
-/**
- * Flag to signify that this `LContainer` may have transplanted views which need to be change
- * detected. (see: `LView[DECLARATION_COMPONENT_VIEW])`.
- *
- * This flag, once set, is never unset for the `LContainer`. This means that when unset we can skip
- * a lot of work in `refreshEmbeddedViews`. But when set we still need to verify
- * that the `MOVED_VIEWS` are transplanted and on-push.
- */
-
-var HAS_TRANSPLANTED_VIEWS = 2; // PARENT, NEXT, TRANSPLANTED_VIEWS_TO_REFRESH are indices 3, 4, and 5
-// As we already have these constants in LView, we don't need to re-create them.
-// T_HOST is index 6
-// We already have this constants in LView, we don't need to re-create it.
-
-var NATIVE = 7;
-var VIEW_REFS = 8;
-var MOVED_VIEWS = 9;
-/**
- * Size of LContainer's header. Represents the index after which all views in the
- * container will be inserted. We need to keep a record of current views so we know
- * which views are already in the DOM (and don't need to be re-added) and so we can
- * remove views from the DOM when they are no longer required.
- */
-
-var CONTAINER_HEADER_OFFSET = 10; // Note: This hack is necessary so we don't erroneously get a circular dependency
 // failure based on types.
 
 var unusedValueExportToPlacateAjd$7 = 1;
@@ -24820,7 +24808,7 @@ function getFactoryDef(type, throwNotFound) {
 
 var SimpleChange = /*#__PURE__*/function () {
   function SimpleChange(previousValue, currentValue, firstChange) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, SimpleChange);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, SimpleChange);
 
     this.previousValue = previousValue;
     this.currentValue = currentValue;
@@ -24831,7 +24819,7 @@ var SimpleChange = /*#__PURE__*/function () {
    */
 
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(SimpleChange, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(SimpleChange, [{
     key: "isFirstChange",
     value: function isFirstChange() {
       return this.firstChange;
@@ -26312,7 +26300,7 @@ var NO_PARENT_INJECTOR = -1;
  * - `viewProviders` factory: `componentProviders` is a number and `index` points to `providers`.
  */
 
-var NodeInjectorFactory = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function NodeInjectorFactory(
+var NodeInjectorFactory = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function NodeInjectorFactory(
 /**
  * Factory to invoke in order to create a new instance.
  */
@@ -26321,7 +26309,7 @@ factory,
  * Set to `true` if the token is declared in `viewProviders` (or if it is component).
  */
 isViewProvider, injectImplementation) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, NodeInjectorFactory);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, NodeInjectorFactory);
 
   this.factory = factory;
   /**
@@ -27468,13 +27456,13 @@ function shouldSearchParent(flags, isFirstHostTNode) {
 
 var NodeInjector = /*#__PURE__*/function () {
   function NodeInjector(_tNode, _lView) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, NodeInjector);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, NodeInjector);
 
     this._tNode = _tNode;
     this._lView = _lView;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(NodeInjector, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(NodeInjector, [{
     key: "get",
     value: function get(token, notFoundValue, flags) {
       return getOrCreateInjectable(this._tNode, this._lView, token, flags, notFoundValue);
@@ -27667,7 +27655,7 @@ function makeDecorator(name, props, parentClass, additionalProcessing, typeFn) {
         return this;
       }
 
-      var annotationInstance = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_construct_js__WEBPACK_IMPORTED_MODULE_9__["default"])(DecoratorFactory, args);
+      var annotationInstance = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_construct_js__WEBPACK_IMPORTED_MODULE_8__["default"])(DecoratorFactory, args);
 
       return function TypeDecorator(cls) {
         if (typeFn) typeFn.apply(void 0, [cls].concat(args)); // Use of Object.defineProperty is important since it creates non-enumerable property which
@@ -27718,7 +27706,7 @@ function makeParamDecorator(name, props, parentClass) {
         return this;
       }
 
-      var annotationInstance = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_construct_js__WEBPACK_IMPORTED_MODULE_9__["default"])(ParamDecoratorFactory, args);
+      var annotationInstance = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_construct_js__WEBPACK_IMPORTED_MODULE_8__["default"])(ParamDecoratorFactory, args);
 
       ParamDecorator.annotation = annotationInstance;
       return ParamDecorator;
@@ -27764,7 +27752,7 @@ function makePropDecorator(name, props, parentClass, additionalProcessing) {
         return this;
       }
 
-      var decoratorInstance = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_construct_js__WEBPACK_IMPORTED_MODULE_9__["default"])(PropDecoratorFactory, args);
+      var decoratorInstance = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_construct_js__WEBPACK_IMPORTED_MODULE_8__["default"])(PropDecoratorFactory, args);
 
       function PropDecorator(target, name) {
         var constructor = target.constructor; // Use of Object.defineProperty is important because it creates a non-enumerable property
@@ -27872,7 +27860,7 @@ var InjectionToken = /*#__PURE__*/function () {
    * @param options Options for the token's usage, as described above
    */
   function InjectionToken(_desc, options) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, InjectionToken);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, InjectionToken);
 
     this._desc = _desc;
     /** @internal */
@@ -27898,7 +27886,7 @@ var InjectionToken = /*#__PURE__*/function () {
    */
 
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(InjectionToken, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(InjectionToken, [{
     key: "multi",
     get: function get() {
       return this;
@@ -27974,8 +27962,8 @@ var emitDistinctChangesOnlyDefaultValue = true;
  * @publicApi
  */
 
-var Query = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function Query() {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, Query);
+var Query = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function Query() {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, Query);
 });
 /**
  * ContentChildren decorator and metadata.
@@ -27988,7 +27976,7 @@ var Query = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_run
 
 var ContentChildren = makePropDecorator('ContentChildren', function (selector) {
   var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_8__["default"])({
+  return Object.assign({
     selector: selector,
     first: false,
     isViewQuery: false,
@@ -28007,7 +27995,7 @@ var ContentChildren = makePropDecorator('ContentChildren', function (selector) {
 
 var ContentChild = makePropDecorator('ContentChild', function (selector) {
   var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_8__["default"])({
+  return Object.assign({
     selector: selector,
     first: true,
     isViewQuery: false,
@@ -28023,7 +28011,7 @@ var ContentChild = makePropDecorator('ContentChild', function (selector) {
 
 var ViewChildren = makePropDecorator('ViewChildren', function (selector) {
   var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_8__["default"])({
+  return Object.assign({
     selector: selector,
     first: false,
     isViewQuery: true,
@@ -28039,7 +28027,7 @@ var ViewChildren = makePropDecorator('ViewChildren', function (selector) {
  */
 
 var ViewChild = makePropDecorator('ViewChild', function (selector, data) {
-  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_8__["default"])({
+  return Object.assign({
     selector: selector,
     first: true,
     isViewQuery: true,
@@ -28604,12 +28592,12 @@ function isDelegateCtor(typeStr) {
 
 var ReflectionCapabilities = /*#__PURE__*/function () {
   function ReflectionCapabilities(reflect) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ReflectionCapabilities);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ReflectionCapabilities);
 
     this._reflect = reflect || _global['Reflect'];
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(ReflectionCapabilities, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(ReflectionCapabilities, [{
     key: "factory",
     value: function factory(t) {
       return function () {
@@ -28617,7 +28605,7 @@ var ReflectionCapabilities = /*#__PURE__*/function () {
           args[_key5] = arguments[_key5];
         }
 
-        return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_construct_js__WEBPACK_IMPORTED_MODULE_9__["default"])(t, args);
+        return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_construct_js__WEBPACK_IMPORTED_MODULE_8__["default"])(t, args);
       };
     }
     /** @internal */
@@ -28856,7 +28844,7 @@ function convertTsickleDecoratorIntoMetadata(decoratorInvocations) {
     var decoratorType = decoratorInvocation.type;
     var annotationCls = decoratorType.annotationCls;
     var annotationArgs = decoratorInvocation.args ? decoratorInvocation.args : [];
-    return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_construct_js__WEBPACK_IMPORTED_MODULE_9__["default"])(annotationCls, (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_7__["default"])(annotationArgs));
+    return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_construct_js__WEBPACK_IMPORTED_MODULE_8__["default"])(annotationCls, (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_7__["default"])(annotationArgs));
   });
 }
 
@@ -29504,7 +29492,7 @@ function getPolicy$1() {
             return s;
           }
         });
-      } catch (_unused) {// trustedTypes.createPolicy throws if called with a name that is
+      } catch (_a) {// trustedTypes.createPolicy throws if called with a name that is
         // already registered, even in report-only mode. Until the API changes,
         // catch the error not to break the applications functionally. In such
         // cases, the code will fall back to using strings.
@@ -29526,9 +29514,9 @@ function getPolicy$1() {
 
 
 function trustedHTMLFromString(html) {
-  var _getPolicy$;
+  var _a;
 
-  return ((_getPolicy$ = getPolicy$1()) === null || _getPolicy$ === void 0 ? void 0 : _getPolicy$.createHTML(html)) || html;
+  return ((_a = getPolicy$1()) === null || _a === void 0 ? void 0 : _a.createHTML(html)) || html;
 }
 /**
  * Unsafely promote a string to a TrustedScript, falling back to strings when
@@ -29540,9 +29528,9 @@ function trustedHTMLFromString(html) {
 
 
 function trustedScriptFromString(script) {
-  var _getPolicy$2;
+  var _a;
 
-  return ((_getPolicy$2 = getPolicy$1()) === null || _getPolicy$2 === void 0 ? void 0 : _getPolicy$2.createScript(script)) || script;
+  return ((_a = getPolicy$1()) === null || _a === void 0 ? void 0 : _a.createScript(script)) || script;
 }
 /**
  * Unsafely promote a string to a TrustedScriptURL, falling back to strings
@@ -29556,9 +29544,9 @@ function trustedScriptFromString(script) {
 
 
 function trustedScriptURLFromString(url) {
-  var _getPolicy$3;
+  var _a;
 
-  return ((_getPolicy$3 = getPolicy$1()) === null || _getPolicy$3 === void 0 ? void 0 : _getPolicy$3.createScriptURL(url)) || url;
+  return ((_a = getPolicy$1()) === null || _a === void 0 ? void 0 : _a.createScriptURL(url)) || url;
 }
 /**
  * Unsafely call the Function constructor with the given string arguments. It
@@ -29583,7 +29571,7 @@ function newTrustedFunctionForDev() {
   if (!_global.trustedTypes) {
     // In environments that don't support Trusted Types, fall back to the most
     // straightforward implementation:
-    return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_construct_js__WEBPACK_IMPORTED_MODULE_9__["default"])(Function, args);
+    return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_construct_js__WEBPACK_IMPORTED_MODULE_8__["default"])(Function, args);
   } // Chrome currently does not support passing TrustedScript to the Function
   // constructor. The following implements the workaround proposed on the page
   // below, where the Chromium bug is also referenced:
@@ -29603,7 +29591,7 @@ function newTrustedFunctionForDev() {
     // a TrustedScript to eval just returns the TrustedScript back without
     // evaluating it. In that case, fall back to the most straightforward
     // implementation:
-    return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_construct_js__WEBPACK_IMPORTED_MODULE_9__["default"])(Function, args);
+    return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_construct_js__WEBPACK_IMPORTED_MODULE_8__["default"])(Function, args);
   } // To completely mimic the behavior of calling "new Function", two more
   // things need to happen:
   // 1. Stringifying the resulting function should return its source code
@@ -29655,7 +29643,7 @@ function getPolicy() {
             return s;
           }
         });
-      } catch (_unused2) {// trustedTypes.createPolicy throws if called with a name that is
+      } catch (_a) {// trustedTypes.createPolicy throws if called with a name that is
         // already registered, even in report-only mode. Until the API changes,
         // catch the error not to break the applications functionally. In such
         // cases, the code will fall back to using strings.
@@ -29676,9 +29664,9 @@ function getPolicy() {
 
 
 function trustedHTMLFromStringBypass(html) {
-  var _getPolicy;
+  var _a;
 
-  return ((_getPolicy = getPolicy()) === null || _getPolicy === void 0 ? void 0 : _getPolicy.createHTML(html)) || html;
+  return ((_a = getPolicy()) === null || _a === void 0 ? void 0 : _a.createHTML(html)) || html;
 }
 /**
  * Unsafely promote a string to a TrustedScript, falling back to strings when
@@ -29691,9 +29679,9 @@ function trustedHTMLFromStringBypass(html) {
 
 
 function trustedScriptFromStringBypass(script) {
-  var _getPolicy2;
+  var _a;
 
-  return ((_getPolicy2 = getPolicy()) === null || _getPolicy2 === void 0 ? void 0 : _getPolicy2.createScript(script)) || script;
+  return ((_a = getPolicy()) === null || _a === void 0 ? void 0 : _a.createScript(script)) || script;
 }
 /**
  * Unsafely promote a string to a TrustedScriptURL, falling back to strings
@@ -29706,9 +29694,9 @@ function trustedScriptFromStringBypass(script) {
 
 
 function trustedScriptURLFromStringBypass(url) {
-  var _getPolicy3;
+  var _a;
 
-  return ((_getPolicy3 = getPolicy()) === null || _getPolicy3 === void 0 ? void 0 : _getPolicy3.createScriptURL(url)) || url;
+  return ((_a = getPolicy()) === null || _a === void 0 ? void 0 : _a.createScriptURL(url)) || url;
 }
 /**
  * @license
@@ -29721,12 +29709,12 @@ function trustedScriptURLFromStringBypass(url) {
 
 var SafeValueImpl = /*#__PURE__*/function () {
   function SafeValueImpl(changingThisBreaksApplicationSecurity) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, SafeValueImpl);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, SafeValueImpl);
 
     this.changingThisBreaksApplicationSecurity = changingThisBreaksApplicationSecurity;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(SafeValueImpl, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(SafeValueImpl, [{
     key: "toString",
     value: function toString() {
       return "SafeValue must use [property]=binding: ".concat(this.changingThisBreaksApplicationSecurity) + " (see https://g.co/ng/security#xss)";
@@ -29737,17 +29725,17 @@ var SafeValueImpl = /*#__PURE__*/function () {
 }();
 
 var SafeHtmlImpl = /*#__PURE__*/function (_SafeValueImpl) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(SafeHtmlImpl, _SafeValueImpl);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(SafeHtmlImpl, _SafeValueImpl);
 
-  var _super2 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(SafeHtmlImpl);
+  var _super2 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(SafeHtmlImpl);
 
   function SafeHtmlImpl() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, SafeHtmlImpl);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, SafeHtmlImpl);
 
     return _super2.apply(this, arguments);
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(SafeHtmlImpl, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(SafeHtmlImpl, [{
     key: "getTypeName",
     value: function getTypeName() {
       return "HTML"
@@ -29760,17 +29748,17 @@ var SafeHtmlImpl = /*#__PURE__*/function (_SafeValueImpl) {
 }(SafeValueImpl);
 
 var SafeStyleImpl = /*#__PURE__*/function (_SafeValueImpl2) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(SafeStyleImpl, _SafeValueImpl2);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(SafeStyleImpl, _SafeValueImpl2);
 
-  var _super3 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(SafeStyleImpl);
+  var _super3 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(SafeStyleImpl);
 
   function SafeStyleImpl() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, SafeStyleImpl);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, SafeStyleImpl);
 
     return _super3.apply(this, arguments);
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(SafeStyleImpl, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(SafeStyleImpl, [{
     key: "getTypeName",
     value: function getTypeName() {
       return "Style"
@@ -29783,17 +29771,17 @@ var SafeStyleImpl = /*#__PURE__*/function (_SafeValueImpl2) {
 }(SafeValueImpl);
 
 var SafeScriptImpl = /*#__PURE__*/function (_SafeValueImpl3) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(SafeScriptImpl, _SafeValueImpl3);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(SafeScriptImpl, _SafeValueImpl3);
 
-  var _super4 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(SafeScriptImpl);
+  var _super4 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(SafeScriptImpl);
 
   function SafeScriptImpl() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, SafeScriptImpl);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, SafeScriptImpl);
 
     return _super4.apply(this, arguments);
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(SafeScriptImpl, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(SafeScriptImpl, [{
     key: "getTypeName",
     value: function getTypeName() {
       return "Script"
@@ -29806,17 +29794,17 @@ var SafeScriptImpl = /*#__PURE__*/function (_SafeValueImpl3) {
 }(SafeValueImpl);
 
 var SafeUrlImpl = /*#__PURE__*/function (_SafeValueImpl4) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(SafeUrlImpl, _SafeValueImpl4);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(SafeUrlImpl, _SafeValueImpl4);
 
-  var _super5 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(SafeUrlImpl);
+  var _super5 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(SafeUrlImpl);
 
   function SafeUrlImpl() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, SafeUrlImpl);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, SafeUrlImpl);
 
     return _super5.apply(this, arguments);
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(SafeUrlImpl, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(SafeUrlImpl, [{
     key: "getTypeName",
     value: function getTypeName() {
       return "URL"
@@ -29829,17 +29817,17 @@ var SafeUrlImpl = /*#__PURE__*/function (_SafeValueImpl4) {
 }(SafeValueImpl);
 
 var SafeResourceUrlImpl = /*#__PURE__*/function (_SafeValueImpl5) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(SafeResourceUrlImpl, _SafeValueImpl5);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(SafeResourceUrlImpl, _SafeValueImpl5);
 
-  var _super6 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(SafeResourceUrlImpl);
+  var _super6 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(SafeResourceUrlImpl);
 
   function SafeResourceUrlImpl() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, SafeResourceUrlImpl);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, SafeResourceUrlImpl);
 
     return _super6.apply(this, arguments);
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(SafeResourceUrlImpl, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(SafeResourceUrlImpl, [{
     key: "getTypeName",
     value: function getTypeName() {
       return "ResourceURL"
@@ -29973,12 +29961,12 @@ function getInertBodyHelper(defaultDoc) {
 
 var DOMParserHelper = /*#__PURE__*/function () {
   function DOMParserHelper(inertDocumentHelper) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, DOMParserHelper);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, DOMParserHelper);
 
     this.inertDocumentHelper = inertDocumentHelper;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(DOMParserHelper, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(DOMParserHelper, [{
     key: "getInertBodyElement",
     value: function getInertBodyElement(html) {
       // We add these extra elements to ensure that the rest of the content is parsed as expected
@@ -29999,7 +29987,7 @@ var DOMParserHelper = /*#__PURE__*/function () {
 
         body.removeChild(body.firstChild);
         return body;
-      } catch (_unused3) {
+      } catch (_a) {
         return null;
       }
     }
@@ -30016,7 +30004,7 @@ var DOMParserHelper = /*#__PURE__*/function () {
 
 var InertDocumentHelper = /*#__PURE__*/function () {
   function InertDocumentHelper(defaultDoc) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, InertDocumentHelper);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, InertDocumentHelper);
 
     this.defaultDoc = defaultDoc;
     this.inertDocument = this.defaultDoc.implementation.createHTMLDocument('sanitization-inert');
@@ -30031,7 +30019,7 @@ var InertDocumentHelper = /*#__PURE__*/function () {
     }
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(InertDocumentHelper, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(InertDocumentHelper, [{
     key: "getInertBodyElement",
     value: function getInertBodyElement(html) {
       // Prefer using <template> element if supported.
@@ -30105,7 +30093,7 @@ var InertDocumentHelper = /*#__PURE__*/function () {
 function isDOMParserAvailable() {
   try {
     return !!new window.DOMParser().parseFromString(trustedHTMLFromString(''), 'text/html');
-  } catch (_unused4) {
+  } catch (_a) {
     return false;
   }
 }
@@ -30260,7 +30248,7 @@ var SKIP_TRAVERSING_CONTENT_IF_INVALID_ELEMENTS = tagSet('script,style,template'
 
 var SanitizingHtmlSerializer = /*#__PURE__*/function () {
   function SanitizingHtmlSerializer() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, SanitizingHtmlSerializer);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, SanitizingHtmlSerializer);
 
     // Explicitly track if something was stripped, to avoid accidentally warning of sanitization just
     // because characters were re-encoded.
@@ -30268,7 +30256,7 @@ var SanitizingHtmlSerializer = /*#__PURE__*/function () {
     this.buf = [];
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(SanitizingHtmlSerializer, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(SanitizingHtmlSerializer, [{
     key: "sanitizeChildren",
     value: function sanitizeChildren(el) {
       // This cannot use a TreeWalker, as it has to run on Angular's various DOM adapters.
@@ -30830,7 +30818,7 @@ function getOriginalError(error) {
 
 var ErrorHandler = /*#__PURE__*/function () {
   function ErrorHandler() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ErrorHandler);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ErrorHandler);
 
     /**
      * @internal
@@ -30838,7 +30826,7 @@ var ErrorHandler = /*#__PURE__*/function () {
     this._console = console;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(ErrorHandler, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(ErrorHandler, [{
     key: "handleError",
     value: function handleError(error) {
       var originalError = this._findOriginalError(error);
@@ -31029,7 +31017,7 @@ var LContext = /*#__PURE__*/function () {
    * The instance of the DOM node that is attached to the lNode.
    */
   native) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, LContext);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, LContext);
 
     this.lViewId = lViewId;
     this.nodeIndex = nodeIndex;
@@ -31038,7 +31026,7 @@ var LContext = /*#__PURE__*/function () {
   /** Component's parent view data. */
 
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(LContext, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(LContext, [{
     key: "lView",
     get: function get() {
       return getLViewById(this.lViewId);
@@ -31770,7 +31758,7 @@ function getNearestLContainer(viewOrContainer) {
  */
 
 
-var unusedValueToPlacateAjd$2 = unusedValueExportToPlacateAjd$7 + unusedValueExportToPlacateAjd$4 + unusedValueExportToPlacateAjd$3 + unusedValueExportToPlacateAjd$6 + unusedValueExportToPlacateAjd$8;
+var unusedValueToPlacateAjd$2 = unusedValueExportToPlacateAjd$8 + unusedValueExportToPlacateAjd$4 + unusedValueExportToPlacateAjd$3 + unusedValueExportToPlacateAjd$6 + unusedValueExportToPlacateAjd$7;
 /**
  * NOTE: for performance reasons, the possible actions are inlined within the function instead of
  * being passed as an argument.
@@ -33868,7 +33856,7 @@ function internalImportProvidersFrom(checkForStandaloneCmp) {
     if ((typeof ngDevMode === 'undefined' || ngDevMode) && checkForStandaloneCmp) {
       var cmpDef = getComponentDef(source);
 
-      if (cmpDef !== null && cmpDef !== void 0 && cmpDef.standalone) {
+      if (cmpDef === null || cmpDef === void 0 ? void 0 : cmpDef.standalone) {
         throw new RuntimeError(800
         /* RuntimeErrorCode.IMPORT_PROVIDERS_FROM_STANDALONE */
         , "Importing providers supports NgModule or ModuleWithProviders but got a standalone component \"".concat(stringifyForError(source), "\""));
@@ -34138,10 +34126,10 @@ var INJECTOR = new InjectionToken('INJECTOR', // Dissable tslint because this is
 
 var NullInjector = /*#__PURE__*/function () {
   function NullInjector() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, NullInjector);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, NullInjector);
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(NullInjector, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(NullInjector, [{
     key: "get",
     value: function get(token) {
       var notFoundValue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : THROW_IF_NOT_FOUND;
@@ -34217,19 +34205,19 @@ function getNullInjector() {
  */
 
 
-var EnvironmentInjector = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function EnvironmentInjector() {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, EnvironmentInjector);
+var EnvironmentInjector = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function EnvironmentInjector() {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, EnvironmentInjector);
 });
 
 var R3Injector = /*#__PURE__*/function (_EnvironmentInjector) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(R3Injector, _EnvironmentInjector);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(R3Injector, _EnvironmentInjector);
 
-  var _super7 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(R3Injector);
+  var _super7 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(R3Injector);
 
   function R3Injector(providers, parent, source, scopes) {
     var _this2;
 
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, R3Injector);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, R3Injector);
 
     _this2 = _super7.call(this);
     _this2.parent = parent;
@@ -34277,7 +34265,7 @@ var R3Injector = /*#__PURE__*/function (_EnvironmentInjector) {
    */
 
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(R3Injector, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(R3Injector, [{
     key: "destroyed",
     get: function get() {
       return this._destroyed;
@@ -34654,7 +34642,7 @@ function providerToFactory(provider, ngModuleType, providers) {
 
       if (hasDeps(provider)) {
         factory = function factory() {
-          return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_construct_js__WEBPACK_IMPORTED_MODULE_9__["default"])(classRef, (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_7__["default"])(injectArgs(provider.deps)));
+          return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_construct_js__WEBPACK_IMPORTED_MODULE_8__["default"])(classRef, (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_7__["default"])(injectArgs(provider.deps)));
         };
       } else {
         return getFactoryDef(classRef) || injectableDefOrInjectorDefFactory(classRef);
@@ -34787,20 +34775,20 @@ function createInjectorWithoutInjectorInstances(defType) {
 
 var Injector = /*#__PURE__*/function () {
   function Injector() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, Injector);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, Injector);
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(Injector, null, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(Injector, null, [{
     key: "create",
     value: function create(options, parent) {
+      var _a;
+
       if (Array.isArray(options)) {
         return createInjector({
           name: ''
         }, parent, options, '');
       } else {
-        var _options$name;
-
-        var name = (_options$name = options.name) !== null && _options$name !== void 0 ? _options$name : '';
+        var name = (_a = options.name) !== null && _a !== void 0 ? _a : '';
         return createInjector({
           name: name
         }, options.parent, options.providers, name);
@@ -35100,7 +35088,7 @@ var ReflectiveKey = /*#__PURE__*/function () {
    * Private
    */
   function ReflectiveKey(token, id) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ReflectiveKey);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ReflectiveKey);
 
     this.token = token;
     this.id = id;
@@ -35116,7 +35104,7 @@ var ReflectiveKey = /*#__PURE__*/function () {
    */
 
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(ReflectiveKey, null, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(ReflectiveKey, null, [{
     key: "get",
     value: function get(token) {
       return _globalKeyRegistry.get(resolveForwardRef(token));
@@ -35137,12 +35125,12 @@ var ReflectiveKey = /*#__PURE__*/function () {
 
 var KeyRegistry = /*#__PURE__*/function () {
   function KeyRegistry() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, KeyRegistry);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, KeyRegistry);
 
     this._allKeys = new Map();
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(KeyRegistry, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(KeyRegistry, [{
     key: "get",
     value: function get(token) {
       if (token instanceof ReflectiveKey) return token;
@@ -35184,14 +35172,14 @@ var _globalKeyRegistry = new KeyRegistry();
 
 var ReflectiveDependency = /*#__PURE__*/function () {
   function ReflectiveDependency(key, optional, visibility) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ReflectiveDependency);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ReflectiveDependency);
 
     this.key = key;
     this.optional = optional;
     this.visibility = visibility;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(ReflectiveDependency, null, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(ReflectiveDependency, null, [{
     key: "fromKey",
     value: function fromKey(key) {
       return new ReflectiveDependency(key, false, null);
@@ -35203,8 +35191,8 @@ var ReflectiveDependency = /*#__PURE__*/function () {
 
 var _EMPTY_LIST = [];
 
-var ResolvedReflectiveProvider_ = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function ResolvedReflectiveProvider_(key, resolvedFactories, multiProvider) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ResolvedReflectiveProvider_);
+var ResolvedReflectiveProvider_ = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function ResolvedReflectiveProvider_(key, resolvedFactories, multiProvider) {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ResolvedReflectiveProvider_);
 
   this.key = key;
   this.resolvedFactories = resolvedFactories;
@@ -35217,7 +35205,7 @@ var ResolvedReflectiveProvider_ = /*#__PURE__*/(0,E_codeProjects_angular_course_
  */
 
 
-var ResolvedReflectiveFactory = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function ResolvedReflectiveFactory(
+var ResolvedReflectiveFactory = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function ResolvedReflectiveFactory(
 /**
  * Factory function which can return an instance of an object represented by a key.
  */
@@ -35226,7 +35214,7 @@ factory,
  * Arguments (dependencies) to the `factory` function.
  */
 dependencies) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ResolvedReflectiveFactory);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ResolvedReflectiveFactory);
 
   this.factory = factory;
   this.dependencies = dependencies;
@@ -35466,10 +35454,10 @@ var UNDEFINED = {};
 
 var ReflectiveInjector = /*#__PURE__*/function () {
   function ReflectiveInjector() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ReflectiveInjector);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ReflectiveInjector);
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(ReflectiveInjector, null, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(ReflectiveInjector, null, [{
     key: "resolve",
     value:
     /**
@@ -35577,7 +35565,7 @@ var ReflectiveInjector_ = /*#__PURE__*/function () {
    * Private
    */
   function ReflectiveInjector_(_providers, _parent) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ReflectiveInjector_);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ReflectiveInjector_);
 
     /** @internal */
     this._constructionCounter = 0;
@@ -35593,7 +35581,7 @@ var ReflectiveInjector_ = /*#__PURE__*/function () {
     }
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(ReflectiveInjector_, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(ReflectiveInjector_, [{
     key: "get",
     value: function get(token) {
       var notFoundValue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : THROW_IF_NOT_FOUND;
@@ -36125,7 +36113,7 @@ function isHostComponentStandalone(lView) {
   !ngDevMode && throwError('Must never be called in production mode');
   var componentDef = getDeclarationComponentDef(lView); // Treat host component as non-standalone if we can't obtain the def.
 
-  return !!(componentDef !== null && componentDef !== void 0 && componentDef.standalone);
+  return !!(componentDef === null || componentDef === void 0 ? void 0 : componentDef.standalone);
 }
 /**
  * WARNING: this is a **dev-mode only** function (thus should always be guarded by the `ngDevMode`)
@@ -36140,11 +36128,11 @@ function isHostComponentStandalone(lView) {
 
 
 function getTemplateLocationDetails(lView) {
-  var _hostComponentDef$typ;
+  var _a;
 
   !ngDevMode && throwError('Must never be called in production mode');
   var hostComponentDef = getDeclarationComponentDef(lView);
-  var componentClassName = hostComponentDef === null || hostComponentDef === void 0 ? void 0 : (_hostComponentDef$typ = hostComponentDef.type) === null || _hostComponentDef$typ === void 0 ? void 0 : _hostComponentDef$typ.name;
+  var componentClassName = (_a = hostComponentDef === null || hostComponentDef === void 0 ? void 0 : hostComponentDef.type) === null || _a === void 0 ? void 0 : _a.name;
   return componentClassName ? " (used in the '".concat(componentClassName, "' component template)") : '';
 }
 /**
@@ -36420,46 +36408,46 @@ function cloneToLViewFromTViewBlueprint(tView) {
 }
 
 var LRootView = /*#__PURE__*/function (_Array) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(LRootView, _Array);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(LRootView, _Array);
 
-  var _super8 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(LRootView);
+  var _super8 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(LRootView);
 
   function LRootView() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, LRootView);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, LRootView);
 
     return _super8.apply(this, arguments);
   }
 
-  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(LRootView);
-}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_14__["default"])(Array));
+  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(LRootView);
+}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(Array));
 
 var LComponentView = /*#__PURE__*/function (_Array2) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(LComponentView, _Array2);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(LComponentView, _Array2);
 
-  var _super9 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(LComponentView);
+  var _super9 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(LComponentView);
 
   function LComponentView() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, LComponentView);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, LComponentView);
 
     return _super9.apply(this, arguments);
   }
 
-  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(LComponentView);
-}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_14__["default"])(Array));
+  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(LComponentView);
+}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(Array));
 
 var LEmbeddedView = /*#__PURE__*/function (_Array3) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(LEmbeddedView, _Array3);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(LEmbeddedView, _Array3);
 
-  var _super10 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(LEmbeddedView);
+  var _super10 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(LEmbeddedView);
 
   function LEmbeddedView() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, LEmbeddedView);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, LEmbeddedView);
 
     return _super10.apply(this, arguments);
   }
 
-  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(LEmbeddedView);
-}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_14__["default"])(Array));
+  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(LEmbeddedView);
+}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(Array));
 
 function getLViewToClone(type, name) {
   switch (type) {
@@ -36521,7 +36509,7 @@ function nameSuffix(text) {
 
 var TViewConstructor = /*#__PURE__*/function () {
   function TView(type, blueprint, template, queries, viewQuery, declTNode, data, bindingStartIndex, expandoStartIndex, hostBindingOpCodes, firstCreatePass, firstUpdatePass, staticViewQueries, staticContentQueries, preOrderHooks, preOrderCheckHooks, contentHooks, contentCheckHooks, viewHooks, viewCheckHooks, destroyHooks, cleanup, contentQueries, components, directiveRegistry, pipeRegistry, firstChild, schemas, consts, incompleteFirstPass, _decls, _vars) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, TView);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, TView);
 
     this.type = type;
     this.blueprint = blueprint;
@@ -36557,7 +36545,7 @@ var TViewConstructor = /*#__PURE__*/function () {
     this._vars = _vars;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(TView, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(TView, [{
     key: "template_",
     get: function get() {
       var buf = [];
@@ -36607,7 +36595,7 @@ var TNode = /*#__PURE__*/function () {
   residualClasses, //
   classBindings, //
   styleBindings) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, TNode);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, TNode);
 
     this.tView_ = tView_;
     this.type = type;
@@ -36657,7 +36645,7 @@ var TNode = /*#__PURE__*/function () {
    */
 
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(TNode, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(TNode, [{
     key: "debugNodeInjectorPath",
     value: function debugNodeInjectorPath(lView) {
       var path = [];
@@ -36831,18 +36819,18 @@ function processTNodeChildren(tNode, buf) {
 }
 
 var TViewData = /*#__PURE__*/function (_Array4) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(TViewData, _Array4);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(TViewData, _Array4);
 
-  var _super11 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(TViewData);
+  var _super11 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(TViewData);
 
   function TViewData() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, TViewData);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, TViewData);
 
     return _super11.apply(this, arguments);
   }
 
-  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(TViewData);
-}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_14__["default"])(Array));
+  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(TViewData);
+}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(Array));
 
 var TVIEWDATA_EMPTY; // can't initialize here or it will not be tree shaken, because
 // `LView` constructor could have side-effects.
@@ -36859,102 +36847,102 @@ function cloneToTViewData(list) {
 }
 
 var LViewBlueprint = /*#__PURE__*/function (_Array5) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(LViewBlueprint, _Array5);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(LViewBlueprint, _Array5);
 
-  var _super12 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(LViewBlueprint);
+  var _super12 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(LViewBlueprint);
 
   function LViewBlueprint() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, LViewBlueprint);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, LViewBlueprint);
 
     return _super12.apply(this, arguments);
   }
 
-  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(LViewBlueprint);
-}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_14__["default"])(Array));
+  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(LViewBlueprint);
+}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(Array));
 
 var MatchesArray = /*#__PURE__*/function (_Array6) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(MatchesArray, _Array6);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(MatchesArray, _Array6);
 
-  var _super13 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(MatchesArray);
+  var _super13 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(MatchesArray);
 
   function MatchesArray() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, MatchesArray);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, MatchesArray);
 
     return _super13.apply(this, arguments);
   }
 
-  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(MatchesArray);
-}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_14__["default"])(Array));
+  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(MatchesArray);
+}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(Array));
 
 var TViewComponents = /*#__PURE__*/function (_Array7) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(TViewComponents, _Array7);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(TViewComponents, _Array7);
 
-  var _super14 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(TViewComponents);
+  var _super14 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(TViewComponents);
 
   function TViewComponents() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, TViewComponents);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, TViewComponents);
 
     return _super14.apply(this, arguments);
   }
 
-  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(TViewComponents);
-}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_14__["default"])(Array));
+  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(TViewComponents);
+}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(Array));
 
 var TNodeLocalNames = /*#__PURE__*/function (_Array8) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(TNodeLocalNames, _Array8);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(TNodeLocalNames, _Array8);
 
-  var _super15 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(TNodeLocalNames);
+  var _super15 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(TNodeLocalNames);
 
   function TNodeLocalNames() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, TNodeLocalNames);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, TNodeLocalNames);
 
     return _super15.apply(this, arguments);
   }
 
-  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(TNodeLocalNames);
-}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_14__["default"])(Array));
+  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(TNodeLocalNames);
+}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(Array));
 
 var TNodeInitialInputs = /*#__PURE__*/function (_Array9) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(TNodeInitialInputs, _Array9);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(TNodeInitialInputs, _Array9);
 
-  var _super16 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(TNodeInitialInputs);
+  var _super16 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(TNodeInitialInputs);
 
   function TNodeInitialInputs() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, TNodeInitialInputs);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, TNodeInitialInputs);
 
     return _super16.apply(this, arguments);
   }
 
-  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(TNodeInitialInputs);
-}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_14__["default"])(Array));
+  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(TNodeInitialInputs);
+}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(Array));
 
 var LCleanup = /*#__PURE__*/function (_Array10) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(LCleanup, _Array10);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(LCleanup, _Array10);
 
-  var _super17 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(LCleanup);
+  var _super17 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(LCleanup);
 
   function LCleanup() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, LCleanup);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, LCleanup);
 
     return _super17.apply(this, arguments);
   }
 
-  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(LCleanup);
-}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_14__["default"])(Array));
+  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(LCleanup);
+}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(Array));
 
 var TCleanup = /*#__PURE__*/function (_Array11) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(TCleanup, _Array11);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(TCleanup, _Array11);
 
-  var _super18 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(TCleanup);
+  var _super18 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(TCleanup);
 
   function TCleanup() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, TCleanup);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, TCleanup);
 
     return _super18.apply(this, arguments);
   }
 
-  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(TCleanup);
-}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_14__["default"])(Array));
+  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(TCleanup);
+}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(Array));
 
 function attachLViewDebug(lView) {
   attachDebugObject(lView, new LViewDebug(lView));
@@ -37016,7 +37004,7 @@ function toHtml(value) {
 
 var LViewDebug = /*#__PURE__*/function () {
   function LViewDebug(_raw_lView) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, LViewDebug);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, LViewDebug);
 
     this._raw_lView = _raw_lView;
   }
@@ -37025,7 +37013,7 @@ var LViewDebug = /*#__PURE__*/function () {
    */
 
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(LViewDebug, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(LViewDebug, [{
     key: "flags",
     get: function get() {
       var flags = this._raw_lView[FLAGS];
@@ -37338,12 +37326,12 @@ function toBloom(array, idx) {
 
 var LContainerDebug = /*#__PURE__*/function () {
   function LContainerDebug(_raw_lContainer) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, LContainerDebug);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, LContainerDebug);
 
     this._raw_lContainer = _raw_lContainer;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(LContainerDebug, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(LContainerDebug, [{
     key: "hasTransplantedViews",
     get: function get() {
       return this._raw_lContainer[HAS_TRANSPLANTED_VIEWS];
@@ -38982,18 +38970,18 @@ function generateInitialInputs(inputs, attrs) {
 
 
 var LContainerArray = /*#__PURE__*/function (_Array12) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(LContainer, _Array12);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(LContainer, _Array12);
 
-  var _super19 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(LContainer);
+  var _super19 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(LContainer);
 
   function LContainer() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, LContainer);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, LContainer);
 
     return _super19.apply(this, arguments);
   }
 
-  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(LContainer);
-}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_14__["default"])(Array));
+  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(LContainer);
+}( /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_wrapNativeSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(Array));
 /**
  * Creates a LContainer, either from a container instruction, or for a ViewContainerRef.
  *
@@ -39827,7 +39815,7 @@ function getDirectives(node) {
   var tView = lView[TVIEW];
   var nodeIndex = context.nodeIndex;
 
-  if (!(tView !== null && tView !== void 0 && tView.data[nodeIndex])) {
+  if (!(tView === null || tView === void 0 ? void 0 : tView.data[nodeIndex])) {
     return [];
   }
 
@@ -47476,13 +47464,13 @@ function i18nRemoveOpCodesToString(opcodes) {
 
 var OpCodeParser = /*#__PURE__*/function () {
   function OpCodeParser(codes) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, OpCodeParser);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, OpCodeParser);
 
     this.i = 0;
     this.codes = codes;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(OpCodeParser, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(OpCodeParser, [{
     key: "hasMore",
     value: function hasMore() {
       return this.i < this.codes.length;
@@ -48959,10 +48947,10 @@ function getComponent(error) {
 
 var _NullComponentFactoryResolver = /*#__PURE__*/function () {
   function _NullComponentFactoryResolver() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, _NullComponentFactoryResolver);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, _NullComponentFactoryResolver);
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(_NullComponentFactoryResolver, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(_NullComponentFactoryResolver, [{
     key: "resolveComponentFactory",
     value: function resolveComponentFactory(component) {
       throw noComponentFactoryError(component);
@@ -48988,8 +48976,8 @@ var _NullComponentFactoryResolver = /*#__PURE__*/function () {
  */
 
 
-var ComponentFactoryResolver$1 = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function ComponentFactoryResolver$1() {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ComponentFactoryResolver$1);
+var ComponentFactoryResolver$1 = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function ComponentFactoryResolver$1() {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ComponentFactoryResolver$1);
 });
 
 ComponentFactoryResolver$1.NULL = /* @__PURE__ */new _NullComponentFactoryResolver();
@@ -49008,8 +48996,8 @@ ComponentFactoryResolver$1.NULL = /* @__PURE__ */new _NullComponentFactoryResolv
  * @publicApi
  */
 
-var NgModuleRef$1 = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function NgModuleRef$1() {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, NgModuleRef$1);
+var NgModuleRef$1 = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function NgModuleRef$1() {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, NgModuleRef$1);
 });
 /**
  * @publicApi
@@ -49024,8 +49012,8 @@ var NgModuleRef$1 = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_b
  */
 
 
-var NgModuleFactory$1 = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function NgModuleFactory$1() {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, NgModuleFactory$1);
+var NgModuleFactory$1 = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function NgModuleFactory$1() {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, NgModuleFactory$1);
 });
 /**
  * @license
@@ -49044,8 +49032,8 @@ var NgModuleFactory$1 = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modul
  */
 
 
-var ComponentRef$1 = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function ComponentRef$1() {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ComponentRef$1);
+var ComponentRef$1 = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function ComponentRef$1() {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ComponentRef$1);
 });
 /**
  * Base class for a factory that can create a component dynamically.
@@ -49061,8 +49049,8 @@ var ComponentRef$1 = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_
  */
 
 
-var ComponentFactory$1 = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function ComponentFactory$1() {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ComponentFactory$1);
+var ComponentFactory$1 = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function ComponentFactory$1() {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ComponentFactory$1);
 });
 /**
  * @license
@@ -49111,8 +49099,8 @@ function createElementRef(tNode, lView) {
 // and could do better codegen in the future.
 
 
-var ElementRef = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function ElementRef(nativeElement) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ElementRef);
+var ElementRef = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function ElementRef(nativeElement) {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ElementRef);
 
   this.nativeElement = nativeElement;
 });
@@ -49149,8 +49137,8 @@ var Renderer2Interceptor = new InjectionToken('Renderer2Interceptor');
  * @publicApi
  */
 
-var RendererFactory2 = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function RendererFactory2() {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, RendererFactory2);
+var RendererFactory2 = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function RendererFactory2() {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, RendererFactory2);
 });
 /**
  * Extend this base class to implement custom rendering. By default, Angular
@@ -49169,8 +49157,8 @@ var RendererFactory2 = /*#__PURE__*/(0,E_codeProjects_angular_course_node_module
  */
 
 
-var Renderer2 = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function Renderer2() {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, Renderer2);
+var Renderer2 = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function Renderer2() {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, Renderer2);
 });
 /**
  * @internal
@@ -49219,8 +49207,8 @@ function injectRenderer2() {
  */
 
 
-var Sanitizer = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function Sanitizer() {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, Sanitizer);
+var Sanitizer = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function Sanitizer() {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, Sanitizer);
 });
 /** @nocollapse */
 
@@ -49246,8 +49234,8 @@ Sanitizer.ɵprov = ɵɵdefineInjectable({
  * @publicApi
  */
 
-var Version = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function Version(full) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, Version);
+var Version = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function Version(full) {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, Version);
 
   this.full = full;
   this.major = full.split('.')[0];
@@ -49391,7 +49379,7 @@ var ViewRef$1 = /*#__PURE__*/function () {
    * This may be different from `_lView` if the `_cdRefInjectingView` is an embedded view.
    */
   _cdRefInjectingView) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ViewRef$1);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ViewRef$1);
 
     this._lView = _lView;
     this._cdRefInjectingView = _cdRefInjectingView;
@@ -49399,7 +49387,7 @@ var ViewRef$1 = /*#__PURE__*/function () {
     this._attachedToViewContainer = false;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(ViewRef$1, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(ViewRef$1, [{
     key: "rootNodes",
     get: function get() {
       var lView = this._lView;
@@ -49693,21 +49681,21 @@ var ViewRef$1 = /*#__PURE__*/function () {
 
 
 var RootViewRef = /*#__PURE__*/function (_ViewRef$) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(RootViewRef, _ViewRef$);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(RootViewRef, _ViewRef$);
 
-  var _super20 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(RootViewRef);
+  var _super20 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(RootViewRef);
 
   function RootViewRef(_view) {
     var _this4;
 
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, RootViewRef);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, RootViewRef);
 
     _this4 = _super20.call(this, _view);
     _this4._view = _view;
     return _this4;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(RootViewRef, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(RootViewRef, [{
     key: "detectChanges",
     value: function detectChanges() {
       detectChangesInRootView(this._view);
@@ -49738,9 +49726,9 @@ var RootViewRef = /*#__PURE__*/function (_ViewRef$) {
 
 
 var ComponentFactoryResolver = /*#__PURE__*/function (_ComponentFactoryReso) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(ComponentFactoryResolver, _ComponentFactoryReso);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(ComponentFactoryResolver, _ComponentFactoryReso);
 
-  var _super21 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(ComponentFactoryResolver);
+  var _super21 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(ComponentFactoryResolver);
 
   /**
    * @param ngModule The NgModuleRef to which all resolved factories are bound.
@@ -49748,14 +49736,14 @@ var ComponentFactoryResolver = /*#__PURE__*/function (_ComponentFactoryReso) {
   function ComponentFactoryResolver(ngModule) {
     var _this5;
 
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ComponentFactoryResolver);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ComponentFactoryResolver);
 
     _this5 = _super21.call(this);
     _this5.ngModule = ngModule;
     return _this5;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(ComponentFactoryResolver, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(ComponentFactoryResolver, [{
     key: "resolveComponentFactory",
     value: function resolveComponentFactory(component) {
       ngDevMode && assertComponentType(component);
@@ -49795,13 +49783,13 @@ function getNamespace(elementName) {
 
 var ChainedInjector = /*#__PURE__*/function () {
   function ChainedInjector(injector, parentInjector) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ChainedInjector);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ChainedInjector);
 
     this.injector = injector;
     this.parentInjector = parentInjector;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(ChainedInjector, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(ChainedInjector, [{
     key: "get",
     value: function get(token, notFoundValue, flags) {
       var value = this.injector.get(token, NOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR, flags);
@@ -49827,9 +49815,9 @@ var ChainedInjector = /*#__PURE__*/function () {
 
 
 var ComponentFactory = /*#__PURE__*/function (_ComponentFactory$) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(ComponentFactory, _ComponentFactory$);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(ComponentFactory, _ComponentFactory$);
 
-  var _super22 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(ComponentFactory);
+  var _super22 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(ComponentFactory);
 
   /**
    * @param componentDef The component definition.
@@ -49838,7 +49826,7 @@ var ComponentFactory = /*#__PURE__*/function (_ComponentFactory$) {
   function ComponentFactory(componentDef, ngModule) {
     var _this6;
 
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ComponentFactory);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ComponentFactory);
 
     _this6 = _super22.call(this);
     _this6.componentDef = componentDef;
@@ -49850,7 +49838,7 @@ var ComponentFactory = /*#__PURE__*/function (_ComponentFactory$) {
     return _this6;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(ComponentFactory, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(ComponentFactory, [{
     key: "inputs",
     get: function get() {
       return toRefArray(this.componentDef.inputs);
@@ -49863,10 +49851,8 @@ var ComponentFactory = /*#__PURE__*/function (_ComponentFactory$) {
   }, {
     key: "create",
     value: function create(injector, projectableNodes, rootSelectorOrNode, environmentInjector) {
-      var _environmentInjector;
-
       environmentInjector = environmentInjector || this.ngModule;
-      var realEnvironmentInjector = environmentInjector instanceof EnvironmentInjector ? environmentInjector : (_environmentInjector = environmentInjector) === null || _environmentInjector === void 0 ? void 0 : _environmentInjector.injector;
+      var realEnvironmentInjector = environmentInjector instanceof EnvironmentInjector ? environmentInjector : environmentInjector === null || environmentInjector === void 0 ? void 0 : environmentInjector.injector;
 
       if (realEnvironmentInjector && this.componentDef.getStandaloneInjector !== null) {
         realEnvironmentInjector = this.componentDef.getStandaloneInjector(realEnvironmentInjector) || realEnvironmentInjector;
@@ -49983,14 +49969,14 @@ function injectComponentFactoryResolver() {
 
 
 var ComponentRef = /*#__PURE__*/function (_ComponentRef$) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(ComponentRef, _ComponentRef$);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(ComponentRef, _ComponentRef$);
 
-  var _super23 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(ComponentRef);
+  var _super23 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(ComponentRef);
 
   function ComponentRef(componentType, instance, location, _rootLView, _tNode) {
     var _this7;
 
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ComponentRef);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ComponentRef);
 
     _this7 = _super23.call(this);
     _this7.location = location;
@@ -50002,7 +49988,7 @@ var ComponentRef = /*#__PURE__*/function (_ComponentRef$) {
     return _this7;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(ComponentRef, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(ComponentRef, [{
     key: "injector",
     get: function get() {
       return new NodeInjector(this._tNode, this._rootLView);
@@ -50043,14 +50029,14 @@ function createNgModuleRef(ngModule, parentInjector) {
 }
 
 var NgModuleRef = /*#__PURE__*/function (_NgModuleRef$) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(NgModuleRef, _NgModuleRef$);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(NgModuleRef, _NgModuleRef$);
 
-  var _super24 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(NgModuleRef);
+  var _super24 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(NgModuleRef);
 
   function NgModuleRef(ngModuleType, _parent) {
     var _this8;
 
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, NgModuleRef);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, NgModuleRef);
 
     _this8 = _super24.call(this);
     _this8._parent = _parent; // tslint:disable-next-line:require-internal-with-underscore
@@ -50084,7 +50070,7 @@ var NgModuleRef = /*#__PURE__*/function (_NgModuleRef$) {
     return _this8;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(NgModuleRef, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(NgModuleRef, [{
     key: "get",
     value: function get(token) {
       var notFoundValue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Injector.THROW_IF_NOT_FOUND;
@@ -50119,21 +50105,21 @@ var NgModuleRef = /*#__PURE__*/function (_NgModuleRef$) {
 }(NgModuleRef$1);
 
 var NgModuleFactory = /*#__PURE__*/function (_NgModuleFactory$) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(NgModuleFactory, _NgModuleFactory$);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(NgModuleFactory, _NgModuleFactory$);
 
-  var _super25 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(NgModuleFactory);
+  var _super25 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(NgModuleFactory);
 
   function NgModuleFactory(moduleType) {
     var _this9;
 
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, NgModuleFactory);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, NgModuleFactory);
 
     _this9 = _super25.call(this);
     _this9.moduleType = moduleType;
     return _this9;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(NgModuleFactory, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(NgModuleFactory, [{
     key: "create",
     value: function create(parentInjector) {
       return new NgModuleRef(this.moduleType, parentInjector);
@@ -50144,14 +50130,14 @@ var NgModuleFactory = /*#__PURE__*/function (_NgModuleFactory$) {
 }(NgModuleFactory$1);
 
 var EnvironmentNgModuleRefAdapter = /*#__PURE__*/function (_NgModuleRef$2) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(EnvironmentNgModuleRefAdapter, _NgModuleRef$2);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(EnvironmentNgModuleRefAdapter, _NgModuleRef$2);
 
-  var _super26 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(EnvironmentNgModuleRefAdapter);
+  var _super26 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(EnvironmentNgModuleRefAdapter);
 
   function EnvironmentNgModuleRefAdapter(providers, parent, source) {
     var _this10;
 
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, EnvironmentNgModuleRefAdapter);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, EnvironmentNgModuleRefAdapter);
 
     _this10 = _super26.call(this);
     _this10.componentFactoryResolver = new ComponentFactoryResolver((0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_4__["default"])(_this10));
@@ -50168,7 +50154,7 @@ var EnvironmentNgModuleRefAdapter = /*#__PURE__*/function (_NgModuleRef$2) {
     return _this10;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(EnvironmentNgModuleRefAdapter, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(EnvironmentNgModuleRefAdapter, [{
     key: "destroy",
     value: function destroy() {
       this.injector.destroy();
@@ -50213,13 +50199,13 @@ function createEnvironmentInjector(providers) {
 
 var StandaloneService = /*#__PURE__*/function () {
   function StandaloneService(_injector) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, StandaloneService);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, StandaloneService);
 
     this._injector = _injector;
     this.cachedInjectors = new Map();
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(StandaloneService, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(StandaloneService, [{
     key: "getOrCreateStandaloneInjector",
     value: function getOrCreateStandaloneInjector(componentDef) {
       if (!componentDef.standalone) {
@@ -50334,7 +50320,7 @@ function setClassMetadata(type, decorators, ctorParameters, propDecorators) {
       // also incredibly unlikely that a field will be decorated both with an Angular
       // decorator and a non-Angular decorator that's also been downleveled.
       if (clazz.hasOwnProperty('propDecorators') && clazz.propDecorators !== undefined) {
-        clazz.propDecorators = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_8__["default"])((0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_8__["default"])({}, clazz.propDecorators), propDecorators);
+        clazz.propDecorators = Object.assign(Object.assign({}, clazz.propDecorators), propDecorators);
       } else {
         clazz.propDecorators = propDecorators;
       }
@@ -50920,23 +50906,23 @@ function isPure(lView, index) {
 
 
 var EventEmitter_ = /*#__PURE__*/function (_Subject) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(EventEmitter_, _Subject);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(EventEmitter_, _Subject);
 
-  var _super27 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(EventEmitter_);
+  var _super27 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(EventEmitter_);
 
   function EventEmitter_() {
     var _this11;
 
     var isAsync = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, EventEmitter_);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, EventEmitter_);
 
     _this11 = _super27.call(this);
     _this11.__isAsync = isAsync;
     return _this11;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(EventEmitter_, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(EventEmitter_, [{
     key: "emit",
     value: function emit(value) {
       (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_get_js__WEBPACK_IMPORTED_MODULE_0__["default"])((0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_getPrototypeOf_js__WEBPACK_IMPORTED_MODULE_1__["default"])(EventEmitter_.prototype), "next", this).call(this, value);
@@ -50944,6 +50930,8 @@ var EventEmitter_ = /*#__PURE__*/function (_Subject) {
   }, {
     key: "subscribe",
     value: function subscribe(observerOrNext, error, complete) {
+      var _a, _b, _c;
+
       var nextFn = observerOrNext;
 
       var errorFn = error || function () {
@@ -50953,12 +50941,10 @@ var EventEmitter_ = /*#__PURE__*/function (_Subject) {
       var completeFn = complete;
 
       if (observerOrNext && typeof observerOrNext === 'object') {
-        var _observer$next, _observer$error, _observer$complete;
-
         var observer = observerOrNext;
-        nextFn = (_observer$next = observer.next) === null || _observer$next === void 0 ? void 0 : _observer$next.bind(observer);
-        errorFn = (_observer$error = observer.error) === null || _observer$error === void 0 ? void 0 : _observer$error.bind(observer);
-        completeFn = (_observer$complete = observer.complete) === null || _observer$complete === void 0 ? void 0 : _observer$complete.bind(observer);
+        nextFn = (_a = observer.next) === null || _a === void 0 ? void 0 : _a.bind(observer);
+        errorFn = (_b = observer.error) === null || _b === void 0 ? void 0 : _b.bind(observer);
+        completeFn = (_c = observer.complete) === null || _c === void 0 ? void 0 : _c.bind(observer);
       }
 
       if (this.__isAsync) {
@@ -50979,7 +50965,7 @@ var EventEmitter_ = /*#__PURE__*/function (_Subject) {
         complete: completeFn
       });
 
-      if (observerOrNext instanceof rxjs__WEBPACK_IMPORTED_MODULE_15__.Subscription) {
+      if (observerOrNext instanceof rxjs__WEBPACK_IMPORTED_MODULE_14__.Subscription) {
         observerOrNext.add(sink);
       }
 
@@ -50988,7 +50974,7 @@ var EventEmitter_ = /*#__PURE__*/function (_Subject) {
   }]);
 
   return EventEmitter_;
-}(rxjs__WEBPACK_IMPORTED_MODULE_16__.Subject);
+}(rxjs__WEBPACK_IMPORTED_MODULE_15__.Subject);
 
 function _wrapInTimeout(fn) {
   return function (value) {
@@ -51049,7 +51035,7 @@ var QueryList = /*#__PURE__*/function () {
   function QueryList() {
     var _emitDistinctChangesOnly = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, QueryList);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, QueryList);
 
     this._emitDistinctChangesOnly = _emitDistinctChangesOnly;
     this.dirty = true;
@@ -51072,7 +51058,7 @@ var QueryList = /*#__PURE__*/function () {
    */
 
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(QueryList, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(QueryList, [{
     key: "changes",
     get: function get() {
       return this._changes || (this._changes = new EventEmitter());
@@ -51246,8 +51232,8 @@ Symbol.iterator;
  * @publicApi
  */
 
-var TemplateRef = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function TemplateRef() {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, TemplateRef);
+var TemplateRef = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function TemplateRef() {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, TemplateRef);
 });
 /**
  * @internal
@@ -51260,14 +51246,14 @@ var ViewEngineTemplateRef = TemplateRef; // TODO(alxhub): combine interface and 
 // in g3 depends on them being separate.
 
 var R3TemplateRef = /*#__PURE__*/function (_ViewEngineTemplateRe) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(TemplateRef, _ViewEngineTemplateRe);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(TemplateRef, _ViewEngineTemplateRe);
 
-  var _super28 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(TemplateRef);
+  var _super28 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(TemplateRef);
 
   function TemplateRef(_declarationLView, _declarationTContainer, elementRef) {
     var _this12;
 
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, TemplateRef);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, TemplateRef);
 
     _this12 = _super28.call(this);
     _this12._declarationLView = _declarationLView;
@@ -51276,7 +51262,7 @@ var R3TemplateRef = /*#__PURE__*/function (_ViewEngineTemplateRe) {
     return _this12;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(TemplateRef, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(TemplateRef, [{
     key: "createEmbeddedView",
     value: function createEmbeddedView(context, injector) {
       var embeddedTView = this._declarationTContainer.tViews;
@@ -51353,8 +51339,8 @@ function createTemplateRef(hostTNode, hostLView) {
  */
 
 
-var ViewContainerRef = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function ViewContainerRef() {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ViewContainerRef);
+var ViewContainerRef = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function ViewContainerRef() {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ViewContainerRef);
 });
 /**
  * @internal
@@ -51379,14 +51365,14 @@ var VE_ViewContainerRef = ViewContainerRef; // TODO(alxhub): cleaning up this in
 // for that lands, this can be cleaned up.
 
 var R3ViewContainerRef = /*#__PURE__*/function (_VE_ViewContainerRef) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(ViewContainerRef, _VE_ViewContainerRef);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(ViewContainerRef, _VE_ViewContainerRef);
 
-  var _super29 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(ViewContainerRef);
+  var _super29 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(ViewContainerRef);
 
   function ViewContainerRef(_lContainer, _hostTNode, _hostLView) {
     var _this13;
 
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ViewContainerRef);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ViewContainerRef);
 
     _this13 = _super29.call(this);
     _this13._lContainer = _lContainer;
@@ -51395,7 +51381,7 @@ var R3ViewContainerRef = /*#__PURE__*/function (_VE_ViewContainerRef) {
     return _this13;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(ViewContainerRef, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(ViewContainerRef, [{
     key: "element",
     get: function get() {
       return createElementRef(this._hostTNode, this._hostLView);
@@ -51733,13 +51719,13 @@ var unusedValueToPlacateAjd = unusedValueExportToPlacateAjd$1 + unusedValueExpor
 
 var LQuery_ = /*#__PURE__*/function () {
   function LQuery_(queryList) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, LQuery_);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, LQuery_);
 
     this.queryList = queryList;
     this.matches = null;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(LQuery_, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(LQuery_, [{
     key: "clone",
     value: function clone() {
       return new LQuery_(this.queryList);
@@ -51758,12 +51744,12 @@ var LQueries_ = /*#__PURE__*/function () {
   function LQueries_() {
     var queries = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
 
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, LQueries_);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, LQueries_);
 
     this.queries = queries;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(LQueries_, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(LQueries_, [{
     key: "createEmbeddedView",
     value: function createEmbeddedView(tView) {
       var tQueries = tView.queries;
@@ -51810,10 +51796,10 @@ var LQueries_ = /*#__PURE__*/function () {
   return LQueries_;
 }();
 
-var TQueryMetadata_ = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function TQueryMetadata_(predicate, flags) {
+var TQueryMetadata_ = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function TQueryMetadata_(predicate, flags) {
   var read = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, TQueryMetadata_);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, TQueryMetadata_);
 
   this.predicate = predicate;
   this.flags = flags;
@@ -51824,12 +51810,12 @@ var TQueries_ = /*#__PURE__*/function () {
   function TQueries_() {
     var queries = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
 
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, TQueries_);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, TQueries_);
 
     this.queries = queries;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(TQueries_, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(TQueries_, [{
     key: "elementStart",
     value: function elementStart(tView, tNode) {
       ngDevMode && assertFirstCreatePass(tView, 'Queries should collect results on the first template pass only');
@@ -51901,7 +51887,7 @@ var TQuery_ = /*#__PURE__*/function () {
   function TQuery_(metadata) {
     var nodeIndex = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : -1;
 
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, TQuery_);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, TQuery_);
 
     this.metadata = metadata;
     this.matches = null;
@@ -51917,7 +51903,7 @@ var TQuery_ = /*#__PURE__*/function () {
     this._declarationNodeIndex = nodeIndex;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(TQuery_, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(TQuery_, [{
     key: "elementStart",
     value: function elementStart(tView, tNode) {
       if (this.isApplyingToNode(tNode)) {
@@ -52862,7 +52848,7 @@ function verifySemanticsOfNgModuleDef(moduleType, allowDuplicateDeclarationsInRo
     type = resolveForwardRef(type);
     var def = getComponentDef(type) || getDirectiveDef(type) || getPipeDef$1(type);
 
-    if (def !== null && def !== void 0 && def.standalone) {
+    if (def === null || def === void 0 ? void 0 : def.standalone) {
       var _location = "\"".concat(stringifyForError(moduleType), "\" NgModule");
 
       errors.push(generateStandaloneInDeclarationsError(type, _location));
@@ -53304,8 +53290,7 @@ function compileComponent(type, metadata) {
         }
 
         var templateUrl = metadata.templateUrl || "ng:///".concat(type.name, "/template.html");
-
-        var meta = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_8__["default"])((0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_8__["default"])({}, directiveMetadata(type, metadata)), {}, {
+        var meta = Object.assign(Object.assign({}, directiveMetadata(type, metadata)), {
           typeSourceSpan: compiler.createParseSourceSpan('Component', type.name, templateUrl),
           template: metadata.template || '',
           preserveWhitespaces: preserveWhitespaces,
@@ -53323,7 +53308,6 @@ function compileComponent(type, metadata) {
           viewProviders: metadata.viewProviders || null,
           isStandalone: !!metadata.standalone
         });
-
         compilationDepth++;
 
         try {
@@ -53872,7 +53856,7 @@ var Directive = makeDecorator('Directive', function () {
 
 var Component = makeDecorator('Component', function () {
   var c = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_8__["default"])({
+  return Object.assign({
     changeDetection: ChangeDetectionStrategy.Default
   }, c);
 }, Directive, undefined, function (type, meta) {
@@ -53884,7 +53868,7 @@ var Component = makeDecorator('Component', function () {
  */
 
 var Pipe = makeDecorator('Pipe', function (p) {
-  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_8__["default"])({
+  return Object.assign({
     pure: true
   }, p);
 }, undefined, undefined, function (type, meta) {
@@ -54038,14 +54022,6 @@ function (type, meta) {
  * found in the LICENSE file at https://angular.io/license
  */
 
-/**
- * @license
- * Copyright Google LLC All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-
 function noop() {// Do nothing.
 }
 /**
@@ -54145,7 +54121,7 @@ var ApplicationInitStatus = /*#__PURE__*/function () {
   function ApplicationInitStatus(appInits) {
     var _this14 = this;
 
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ApplicationInitStatus);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ApplicationInitStatus);
 
     this.appInits = appInits;
     this.resolve = noop;
@@ -54160,7 +54136,7 @@ var ApplicationInitStatus = /*#__PURE__*/function () {
   /** @internal */
 
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(ApplicationInitStatus, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(ApplicationInitStatus, [{
     key: "runInitializers",
     value: function runInitializers() {
       var _this15 = this;
@@ -54346,10 +54322,10 @@ var ANIMATION_MODULE_TYPE = new InjectionToken('AnimationModuleType');
 
 var Console = /*#__PURE__*/function () {
   function Console() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, Console);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, Console);
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(Console, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(Console, [{
     key: "log",
     value: function log(message) {
       // tslint:disable-next-line:no-console
@@ -54595,8 +54571,8 @@ var MissingTranslationStrategy;
  */
 
 
-var ModuleWithComponentFactories = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function ModuleWithComponentFactories(ngModuleFactory, componentFactories) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ModuleWithComponentFactories);
+var ModuleWithComponentFactories = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function ModuleWithComponentFactories(ngModuleFactory, componentFactories) {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ModuleWithComponentFactories);
 
   this.ngModuleFactory = ngModuleFactory;
   this.componentFactories = componentFactories;
@@ -54621,10 +54597,10 @@ var ModuleWithComponentFactories = /*#__PURE__*/(0,E_codeProjects_angular_course
 
 var Compiler = /*#__PURE__*/function () {
   function Compiler() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, Compiler);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, Compiler);
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(Compiler, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(Compiler, [{
     key: "compileModuleSync",
     value:
     /**
@@ -54733,8 +54709,8 @@ var COMPILER_OPTIONS = new InjectionToken('compilerOptions');
  * additional context.
  */
 
-var CompilerFactory = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function CompilerFactory() {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, CompilerFactory);
+var CompilerFactory = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function CompilerFactory() {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, CompilerFactory);
 });
 /**
  * @license
@@ -54886,7 +54862,7 @@ var NgZone = /*#__PURE__*/function () {
         _ref$shouldCoalesceRu = _ref.shouldCoalesceRunChangeDetection,
         shouldCoalesceRunChangeDetection = _ref$shouldCoalesceRu === void 0 ? false : _ref$shouldCoalesceRu;
 
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, NgZone);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, NgZone);
 
     this.hasPendingMacrotasks = false;
     this.hasPendingMicrotasks = false;
@@ -54946,7 +54922,7 @@ var NgZone = /*#__PURE__*/function () {
     forkInnerZoneWithAngularBehavior(self);
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(NgZone, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(NgZone, [{
     key: "run",
     value:
     /**
@@ -55212,7 +55188,7 @@ function onLeave(zone) {
 
 var NoopNgZone = /*#__PURE__*/function () {
   function NoopNgZone() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, NoopNgZone);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, NoopNgZone);
 
     this.hasPendingMicrotasks = false;
     this.hasPendingMacrotasks = false;
@@ -55223,7 +55199,7 @@ var NoopNgZone = /*#__PURE__*/function () {
     this.onError = new EventEmitter();
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(NoopNgZone, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(NoopNgZone, [{
     key: "run",
     value: function run(fn, applyThis, applyArgs) {
       return fn.apply(applyThis, applyArgs);
@@ -55297,7 +55273,7 @@ var Testability = /*#__PURE__*/function () {
   function Testability(_ngZone, registry, testabilityGetter) {
     var _this16 = this;
 
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, Testability);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, Testability);
 
     this._ngZone = _ngZone;
     this.registry = registry;
@@ -55327,7 +55303,7 @@ var Testability = /*#__PURE__*/function () {
     });
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(Testability, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(Testability, [{
     key: "_watchAngularEvents",
     value: function _watchAngularEvents() {
       var _this17 = this;
@@ -55573,7 +55549,7 @@ Testability.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
 
 var TestabilityRegistry = /*#__PURE__*/function () {
   function TestabilityRegistry() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, TestabilityRegistry);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, TestabilityRegistry);
 
     /** @internal */
     this._applications = new Map();
@@ -55585,7 +55561,7 @@ var TestabilityRegistry = /*#__PURE__*/function () {
    */
 
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(TestabilityRegistry, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(TestabilityRegistry, [{
     key: "registerApplication",
     value: function registerApplication(token, testability) {
       this._applications.set(token, testability);
@@ -55647,10 +55623,11 @@ var TestabilityRegistry = /*#__PURE__*/function () {
   }, {
     key: "findTestabilityInTree",
     value: function findTestabilityInTree(elem) {
-      var _testabilityGetter$fi, _testabilityGetter2;
-
       var findInAncestors = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
-      return (_testabilityGetter$fi = (_testabilityGetter2 = _testabilityGetter) === null || _testabilityGetter2 === void 0 ? void 0 : _testabilityGetter2.findTestabilityInTree(this, elem, findInAncestors)) !== null && _testabilityGetter$fi !== void 0 ? _testabilityGetter$fi : null;
+
+      var _a;
+
+      return (_a = _testabilityGetter === null || _testabilityGetter === void 0 ? void 0 : _testabilityGetter.findTestabilityInTree(this, elem, findInAncestors)) !== null && _a !== void 0 ? _a : null;
     }
   }]);
 
@@ -55783,8 +55760,8 @@ function isBoundToModule(cf) {
  */
 
 
-var NgProbeToken = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function NgProbeToken(name, token) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, NgProbeToken);
+var NgProbeToken = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function NgProbeToken(name, token) {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, NgProbeToken);
 
   this.name = name;
   this.token = token;
@@ -55992,9 +55969,9 @@ function createPlatformInjector() {
 
 
 function destroyPlatform() {
-  var _getPlatform;
+  var _a;
 
-  (_getPlatform = getPlatform()) === null || _getPlatform === void 0 ? void 0 : _getPlatform.destroy();
+  (_a = getPlatform()) === null || _a === void 0 ? void 0 : _a.destroy();
 }
 /**
  * Returns the current platform.
@@ -56004,9 +55981,9 @@ function destroyPlatform() {
 
 
 function getPlatform() {
-  var _platformInjector$get, _platformInjector2;
+  var _a;
 
-  return (_platformInjector$get = (_platformInjector2 = _platformInjector) === null || _platformInjector2 === void 0 ? void 0 : _platformInjector2.get(PlatformRef)) !== null && _platformInjector$get !== void 0 ? _platformInjector$get : null;
+  return (_a = _platformInjector === null || _platformInjector === void 0 ? void 0 : _platformInjector.get(PlatformRef)) !== null && _a !== void 0 ? _a : null;
 }
 /**
  * The Angular platform is the entry point for Angular on a web page.
@@ -56022,7 +55999,7 @@ function getPlatform() {
 var PlatformRef = /*#__PURE__*/function () {
   /** @internal */
   function PlatformRef(_injector) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, PlatformRef);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, PlatformRef);
 
     this._injector = _injector;
     this._modules = [];
@@ -56037,7 +56014,7 @@ var PlatformRef = /*#__PURE__*/function () {
    */
 
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(PlatformRef, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(PlatformRef, [{
     key: "bootstrapModuleFactory",
     value: function bootstrapModuleFactory(moduleFactory, options) {
       var _this20 = this;
@@ -56280,7 +56257,7 @@ function optionsReducer(dst, objs) {
   if (Array.isArray(objs)) {
     dst = objs.reduce(optionsReducer, dst);
   } else {
-    dst = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_8__["default"])((0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_objectSpread2_js__WEBPACK_IMPORTED_MODULE_8__["default"])({}, dst), objs);
+    dst = Object.assign(Object.assign({}, dst), objs);
   }
 
   return dst;
@@ -56385,7 +56362,7 @@ var ApplicationRef = /*#__PURE__*/function () {
   function ApplicationRef(_zone, _injector, _exceptionHandler, _initStatus) {
     var _this22 = this;
 
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ApplicationRef);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ApplicationRef);
 
     this._zone = _zone;
     this._injector = _injector;
@@ -56417,7 +56394,7 @@ var ApplicationRef = /*#__PURE__*/function () {
         });
       }
     });
-    var isCurrentlyStable = new rxjs__WEBPACK_IMPORTED_MODULE_17__.Observable(function (observer) {
+    var isCurrentlyStable = new rxjs__WEBPACK_IMPORTED_MODULE_16__.Observable(function (observer) {
       _this22._stable = _this22._zone.isStable && !_this22._zone.hasPendingMacrotasks && !_this22._zone.hasPendingMicrotasks;
 
       _this22._zone.runOutsideAngular(function () {
@@ -56425,7 +56402,7 @@ var ApplicationRef = /*#__PURE__*/function () {
         observer.complete();
       });
     });
-    var isStable = new rxjs__WEBPACK_IMPORTED_MODULE_17__.Observable(function (observer) {
+    var isStable = new rxjs__WEBPACK_IMPORTED_MODULE_16__.Observable(function (observer) {
       // Create the subscription to onStable outside the Angular Zone so that
       // the callback is run outside the Angular Zone.
       var stableSub;
@@ -56461,14 +56438,14 @@ var ApplicationRef = /*#__PURE__*/function () {
         unstableSub.unsubscribe();
       };
     });
-    this.isStable = (0,rxjs__WEBPACK_IMPORTED_MODULE_18__.merge)(isCurrentlyStable, isStable.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_19__.share)()));
+    this.isStable = (0,rxjs__WEBPACK_IMPORTED_MODULE_17__.merge)(isCurrentlyStable, isStable.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_18__.share)()));
   }
   /**
    * Indicates whether this instance was destroyed.
    */
 
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(ApplicationRef, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(ApplicationRef, [{
     key: "destroyed",
     get: function get() {
       return this._destroyed;
@@ -56993,8 +56970,8 @@ function noModuleError(id) {
  */
 
 
-var ChangeDetectorRef = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function ChangeDetectorRef() {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ChangeDetectorRef);
+var ChangeDetectorRef = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function ChangeDetectorRef() {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ChangeDetectorRef);
 });
 /**
  * @internal
@@ -57063,17 +57040,17 @@ function createViewRef(tNode, lView, isPipe) {
 
 
 var ViewRef = /*#__PURE__*/function (_ChangeDetectorRef) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(ViewRef, _ChangeDetectorRef);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(ViewRef, _ChangeDetectorRef);
 
-  var _super30 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(ViewRef);
+  var _super30 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(ViewRef);
 
   function ViewRef() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ViewRef);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ViewRef);
 
     return _super30.apply(this, arguments);
   }
 
-  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(ViewRef);
+  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(ViewRef);
 }(ChangeDetectorRef);
 /**
  * Represents an Angular [view](guide/glossary#view) in a view container.
@@ -57131,17 +57108,17 @@ var ViewRef = /*#__PURE__*/function (_ChangeDetectorRef) {
 
 
 var EmbeddedViewRef = /*#__PURE__*/function (_ViewRef) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(EmbeddedViewRef, _ViewRef);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(EmbeddedViewRef, _ViewRef);
 
-  var _super31 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(EmbeddedViewRef);
+  var _super31 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(EmbeddedViewRef);
 
   function EmbeddedViewRef() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, EmbeddedViewRef);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, EmbeddedViewRef);
 
     return _super31.apply(this, arguments);
   }
 
-  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(EmbeddedViewRef);
+  return (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(EmbeddedViewRef);
 }(ViewRef);
 /**
  * @license
@@ -57174,8 +57151,8 @@ var ng_module_factory_loader_impl = {};
  * @publicApi
  */
 
-var DebugEventListener = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function DebugEventListener(name, callback) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, DebugEventListener);
+var DebugEventListener = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function DebugEventListener(name, callback) {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, DebugEventListener);
 
   this.name = name;
   this.callback = callback;
@@ -57197,7 +57174,7 @@ function asNativeElements(debugEls) {
 
 var DebugNode = /*#__PURE__*/function () {
   function DebugNode(nativeNode) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, DebugNode);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, DebugNode);
 
     this.nativeNode = nativeNode;
   }
@@ -57206,7 +57183,7 @@ var DebugNode = /*#__PURE__*/function () {
    */
 
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(DebugNode, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(DebugNode, [{
     key: "parent",
     get: function get() {
       var parent = this.nativeNode.parentNode;
@@ -57291,12 +57268,12 @@ var DebugNode = /*#__PURE__*/function () {
 
 
 var DebugElement = /*#__PURE__*/function (_DebugNode) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_12__["default"])(DebugElement, _DebugNode);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_11__["default"])(DebugElement, _DebugNode);
 
-  var _super32 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_13__["default"])(DebugElement);
+  var _super32 = (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_12__["default"])(DebugElement);
 
   function DebugElement(nativeNode) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, DebugElement);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, DebugElement);
 
     ngDevMode && assertDomNode(nativeNode);
     return _super32.call(this, nativeNode);
@@ -57306,7 +57283,7 @@ var DebugElement = /*#__PURE__*/function (_DebugNode) {
    */
 
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(DebugElement, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(DebugElement, [{
     key: "nativeElement",
     get: function get() {
       return this.nativeNode.nodeType == Node.ELEMENT_NODE ? this.nativeNode : null;
@@ -57907,10 +57884,10 @@ function removeDebugNodeFromIndex(node) {
 
 var DefaultIterableDifferFactory = /*#__PURE__*/function () {
   function DefaultIterableDifferFactory() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, DefaultIterableDifferFactory);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, DefaultIterableDifferFactory);
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(DefaultIterableDifferFactory, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(DefaultIterableDifferFactory, [{
     key: "supports",
     value: function supports(obj) {
       return isListLikeIterable(obj);
@@ -57936,7 +57913,7 @@ var trackByIdentity = function trackByIdentity(index, item) {
 
 var DefaultIterableDiffer = /*#__PURE__*/function () {
   function DefaultIterableDiffer(trackByFn) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, DefaultIterableDiffer);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, DefaultIterableDiffer);
 
     this.length = 0; // Keeps track of the used records at any point in time (during & across `_check()` calls)
 
@@ -57958,7 +57935,7 @@ var DefaultIterableDiffer = /*#__PURE__*/function () {
     this._trackByFn = trackByFn || trackByIdentity;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(DefaultIterableDiffer, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(DefaultIterableDiffer, [{
     key: "forEachItem",
     value: function forEachItem(fn) {
       var record;
@@ -58534,8 +58511,8 @@ var DefaultIterableDiffer = /*#__PURE__*/function () {
   return DefaultIterableDiffer;
 }();
 
-var IterableChangeRecord_ = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function IterableChangeRecord_(item, trackById) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, IterableChangeRecord_);
+var IterableChangeRecord_ = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function IterableChangeRecord_(item, trackById) {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, IterableChangeRecord_);
 
   this.item = item;
   this.trackById = trackById;
@@ -58576,7 +58553,7 @@ var IterableChangeRecord_ = /*#__PURE__*/(0,E_codeProjects_angular_course_node_m
 
 var _DuplicateItemRecordList = /*#__PURE__*/function () {
   function _DuplicateItemRecordList() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, _DuplicateItemRecordList);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, _DuplicateItemRecordList);
 
     /** @internal */
     this._head = null;
@@ -58591,7 +58568,7 @@ var _DuplicateItemRecordList = /*#__PURE__*/function () {
    */
 
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(_DuplicateItemRecordList, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(_DuplicateItemRecordList, [{
     key: "add",
     value: function add(record) {
       if (this._head === null) {
@@ -58664,12 +58641,12 @@ var _DuplicateItemRecordList = /*#__PURE__*/function () {
 
 var _DuplicateMap = /*#__PURE__*/function () {
   function _DuplicateMap() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, _DuplicateMap);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, _DuplicateMap);
 
     this.map = new Map();
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(_DuplicateMap, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(_DuplicateMap, [{
     key: "put",
     value: function put(record) {
       var key = record.trackById;
@@ -58752,10 +58729,10 @@ function getPreviousIndex(item, addRemoveOffset, moveOffsets) {
 
 var DefaultKeyValueDifferFactory = /*#__PURE__*/function () {
   function DefaultKeyValueDifferFactory() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, DefaultKeyValueDifferFactory);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, DefaultKeyValueDifferFactory);
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(DefaultKeyValueDifferFactory, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(DefaultKeyValueDifferFactory, [{
     key: "supports",
     value: function supports(obj) {
       return obj instanceof Map || isJsObject(obj);
@@ -58772,7 +58749,7 @@ var DefaultKeyValueDifferFactory = /*#__PURE__*/function () {
 
 var DefaultKeyValueDiffer = /*#__PURE__*/function () {
   function DefaultKeyValueDiffer() {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, DefaultKeyValueDiffer);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, DefaultKeyValueDiffer);
 
     this._records = new Map();
     this._mapHead = null; // _appendAfter is used in the check loop
@@ -58787,7 +58764,7 @@ var DefaultKeyValueDiffer = /*#__PURE__*/function () {
     this._removalsTail = null;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(DefaultKeyValueDiffer, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(DefaultKeyValueDiffer, [{
     key: "isDirty",
     get: function get() {
       return this._additionsHead !== null || this._changesHead !== null || this._removalsHead !== null;
@@ -59062,8 +59039,8 @@ var DefaultKeyValueDiffer = /*#__PURE__*/function () {
   return DefaultKeyValueDiffer;
 }();
 
-var KeyValueChangeRecord_ = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(function KeyValueChangeRecord_(key) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, KeyValueChangeRecord_);
+var KeyValueChangeRecord_ = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(function KeyValueChangeRecord_(key) {
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, KeyValueChangeRecord_);
 
   this.key = key;
   this.previousValue = null;
@@ -59108,12 +59085,12 @@ function defaultIterableDiffersFactory() {
 
 var IterableDiffers = /*#__PURE__*/function () {
   function IterableDiffers(factories) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, IterableDiffers);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, IterableDiffers);
 
     this.factories = factories;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(IterableDiffers, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(IterableDiffers, [{
     key: "find",
     value: function find(iterable) {
       var factory = this.factories.find(function (f) {
@@ -59212,12 +59189,12 @@ function defaultKeyValueDiffersFactory() {
 
 var KeyValueDiffers = /*#__PURE__*/function () {
   function KeyValueDiffers(factories) {
-    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, KeyValueDiffers);
+    (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, KeyValueDiffers);
 
     this.factories = factories;
   }
 
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])(KeyValueDiffers, [{
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(KeyValueDiffers, [{
     key: "find",
     value: function find(kv) {
       var factory = this.factories.find(function (f) {
@@ -59335,14 +59312,6 @@ var defaultKeyValueDiffers = new KeyValueDiffers(keyValDiff);
 
 var platformCore = createPlatformFactory(null, 'core', []);
 /**
- * @license
- * Copyright Google LLC All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-
-/**
  * Re-exported by `BrowserModule`, which is included automatically in the root
  * `AppModule` when you create a new app with the CLI `new` command. Eagerly injects
  * `ApplicationRef` to instantiate it.
@@ -59350,9 +59319,9 @@ var platformCore = createPlatformFactory(null, 'core', []);
  * @publicApi
  */
 
-var ApplicationModule = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_10__["default"])( // Inject ApplicationRef to make it eager...
+var ApplicationModule = /*#__PURE__*/(0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])( // Inject ApplicationRef to make it eager...
 function ApplicationModule(appRef) {
-  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_11__["default"])(this, ApplicationModule);
+  (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_10__["default"])(this, ApplicationModule);
 });
 
 ApplicationModule.ɵfac = function ApplicationModule_Factory(t) {
@@ -59430,9 +59399,9 @@ function ɵɵngDeclareDirective(decl) {
 
 
 function ɵɵngDeclareClassMetadata(decl) {
-  var _decl$ctorParameters, _decl$propDecorators;
+  var _a, _b;
 
-  setClassMetadata(decl.type, decl.decorators, (_decl$ctorParameters = decl.ctorParameters) !== null && _decl$ctorParameters !== void 0 ? _decl$ctorParameters : null, (_decl$propDecorators = decl.propDecorators) !== null && _decl$propDecorators !== void 0 ? _decl$propDecorators : null);
+  setClassMetadata(decl.type, decl.decorators, (_a = decl.ctorParameters) !== null && _a !== void 0 ? _a : null, (_b = decl.propDecorators) !== null && _b !== void 0 ? _b : null);
 }
 /**
  * Compiles a partial component declaration object into a full component definition object.
@@ -59607,9 +59576,9 @@ if (typeof ngDevMode !== 'undefined' && ngDevMode) {
 
 /***/ }),
 
-/***/ 4555:
+/***/ 7616:
 /*!**************************************************************!*\
-  !*** ./node_modules/@angular/elements/fesm2020/elements.mjs ***!
+  !*** ./node_modules/@angular/elements/fesm2015/elements.mjs ***!
   \**************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
@@ -59625,7 +59594,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js */ 8277);
 /* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ 8069);
 /* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ 8047);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ 1555);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs */ 8623);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 9095);
@@ -60436,9 +60405,9 @@ var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_6__.Version('14.0.1');
 
 /***/ }),
 
-/***/ 7146:
+/***/ 3598:
 /*!************************************************************************!*\
-  !*** ./node_modules/@angular/platform-browser/fesm2020/animations.mjs ***!
+  !*** ./node_modules/@angular/platform-browser/fesm2015/animations.mjs ***!
   \************************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
@@ -60458,11 +60427,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ 8047);
 /* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/inherits.js */ 4582);
 /* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createSuper.js */ 2496);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 2560);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser */ 4497);
-/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/animations */ 4851);
-/* harmony import */ var _angular_animations_browser__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/animations/browser */ 5787);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 4666);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser */ 318);
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/animations */ 1631);
+/* harmony import */ var _angular_animations_browser__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/animations/browser */ 289);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 6362);
 
 
 
@@ -60675,9 +60644,9 @@ var RendererAnimationPlayer = /*#__PURE__*/function () {
   }, {
     key: "getPosition",
     value: function getPosition() {
-      var _this$_renderer$engin, _this$_renderer$engin2;
+      var _a, _b;
 
-      return (_this$_renderer$engin = (_this$_renderer$engin2 = this._renderer.engine.players[+this.id]) === null || _this$_renderer$engin2 === void 0 ? void 0 : _this$_renderer$engin2.getPosition()) !== null && _this$_renderer$engin !== void 0 ? _this$_renderer$engin : 0;
+      return (_b = (_a = this._renderer.engine.players[+this.id]) === null || _a === void 0 ? void 0 : _a.getPosition()) !== null && _b !== void 0 ? _b : 0;
     }
   }]);
 
@@ -61326,9 +61295,9 @@ NoopAnimationsModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODU
 
 /***/ }),
 
-/***/ 4497:
+/***/ 318:
 /*!******************************************************************************!*\
-  !*** ./node_modules/@angular/platform-browser/fesm2020/platform-browser.mjs ***!
+  !*** ./node_modules/@angular/platform-browser/fesm2015/platform-browser.mjs ***!
   \******************************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
@@ -61380,8 +61349,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ 8069);
 /* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/inherits.js */ 4582);
 /* harmony import */ var E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createSuper.js */ 2496);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 4666);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 6362);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 3184);
 
 
 
@@ -62930,11 +62899,11 @@ var NG_DEV_MODE = typeof ngDevMode === 'undefined' || !!ngDevMode;
  */
 
 function bootstrapApplication(rootComponent, options) {
-  var _options$providers;
+  var _a;
 
   return (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵinternalBootstrapApplication"])({
     rootComponent: rootComponent,
-    appProviders: [].concat(BROWSER_MODULE_PROVIDERS, (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0__["default"])((_options$providers = options === null || options === void 0 ? void 0 : options.providers) !== null && _options$providers !== void 0 ? _options$providers : [])),
+    appProviders: [].concat(BROWSER_MODULE_PROVIDERS, (0,E_codeProjects_angular_course_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0__["default"])((_a = options === null || options === void 0 ? void 0 : options.providers) !== null && _a !== void 0 ? _a : [])),
     platformProviders: INTERNAL_BROWSER_PLATFORM_PROVIDERS
   });
 }
@@ -65145,47 +65114,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function _nonIterableSpread() {
   throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-}
-
-/***/ }),
-
-/***/ 5603:
-/*!******************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/esm/objectSpread2.js ***!
-  \******************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ _objectSpread2)
-/* harmony export */ });
-/* harmony import */ var _defineProperty_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./defineProperty.js */ 7797);
-
-
-function ownKeys(object, enumerableOnly) {
-  var keys = Object.keys(object);
-
-  if (Object.getOwnPropertySymbols) {
-    var symbols = Object.getOwnPropertySymbols(object);
-    enumerableOnly && (symbols = symbols.filter(function (sym) {
-      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-    })), keys.push.apply(keys, symbols);
-  }
-
-  return keys;
-}
-
-function _objectSpread2(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = null != arguments[i] ? arguments[i] : {};
-    i % 2 ? ownKeys(Object(source), !0).forEach(function (key) {
-      (0,_defineProperty_js__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) {
-      Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-    });
-  }
-
-  return target;
 }
 
 /***/ }),
