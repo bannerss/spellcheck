@@ -1,8 +1,10 @@
-import * as express from 'express';
-import { getAllCourses } from './serverFuncs/get-courses.route';
-import { saveCourse } from './serverFuncs/save-course.route';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express = require("express");
+const get_courses_route_1 = require("./serverFuncs/get-courses.route");
+const save_course_route_1 = require("./serverFuncs/save-course.route");
 const cors = require('cors');
-import * as path from 'path';
+const path = require("path");
 const bodyParser = require('body-parser');
 const app = express();
 app.use(cors({ origin: true }));
@@ -29,8 +31,8 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Credentials', "true");
     next();
 });
-app.route('/api/courses').get(getAllCourses);
-app.route('/api/courses/:id').put(saveCourse);
+app.route('/api/courses').get(get_courses_route_1.getAllCourses);
+app.route('/api/courses/:id').put(save_course_route_1.saveCourse);
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'src/app/index.html'));
 });
