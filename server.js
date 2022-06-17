@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
-const get_courses_route_1 = require("./serverFuncs/get-courses.route");
-const save_course_route_1 = require("./serverFuncs/save-course.route");
+const get_courses_route_1 = require("./server/get-courses.route");
+const save_course_route_1 = require("./server/save-course.route");
 const cors = require('cors');
 const path = require("path");
 const bodyParser = require('body-parser');

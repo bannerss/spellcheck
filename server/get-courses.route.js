@@ -1,15 +1,16 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.getCourseById = exports.getAllCourses = void 0;
-var db_data_1 = require("../src/db-data");
+const db_data_1 = require("../src/db-data");
 function getAllCourses(req, res) {
     res.status(200).json(Object.values(db_data_1.COURSES));
 }
 exports.getAllCourses = getAllCourses;
 function getCourseById(req, res) {
-    var courseId = req.params['id'];
-    var courses = Object.values(db_data_1.COURSES);
-    var course = courses.find(function (course) { return course.id == courseId; });
+    const courseId = req.params['id'];
+    const courses = Object.values(db_data_1.COURSES);
+    const course = courses.find(course => course.id == courseId);
     res.status(200).json(course);
 }
 exports.getCourseById = getCourseById;
+//# sourceMappingURL=get-courses.route.js.map
