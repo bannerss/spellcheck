@@ -1,4 +1,7 @@
-export const COURSES = [
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.findCourseById = exports.COURSES = void 0;
+exports.COURSES = [
     {
         id: 1,
         description: "Angular Core Deep Dive",
@@ -75,7 +78,8 @@ export const COURSES = [
         category: 'ADVANCED'
     }
 ];
-export function findCourseById(courseId) {
-    return COURSES.find(course => course.id == courseId);
+function findCourseById(courseId) {
+    return exports.COURSES.find(course => course.id == courseId);
 }
+exports.findCourseById = findCourseById;
 //# sourceMappingURL=db-data.js.map
