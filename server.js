@@ -33,7 +33,7 @@ app.use(function (req, res, next) {
 });
 app.route('/api/courses').get(get_courses_route_1.getAllCourses);
 app.route('/api/courses/:id').put(save_course_route_1.saveCourse);
-app.use('/', express.static(path.join(__dirname, 'browser')));
+app.use('/', express.static(path.join(__dirname, 'src')));
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'src/index.html'));
 });
