@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
 exports.getCourseById = exports.getAllCourses = void 0;
-var db_data_1 = require("../../src/db-data");
+var db_data_1 = require("../src/db-data");
 function getAllCourses(req, res) {
     res.status(200).json(Object.values(db_data_1.COURSES));
 }
