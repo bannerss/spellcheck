@@ -10,25 +10,34 @@
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.AppComponent = void 0;
-const tslib_1 = __webpack_require__(/*! tslib */ 3786);
+const config_1 = __webpack_require__(/*! ./config */ 9698);
 const db_data_1 = __webpack_require__(/*! ../db-data */ 6764);
-const elements_1 = __webpack_require__(/*! @angular/elements */ 8154);
+const elements_1 = __webpack_require__(/*! @angular/elements */ 7616);
 const course_title_component_1 = __webpack_require__(/*! ./course-title/course-title.component */ 7583);
-const i0 = tslib_1.__importStar(__webpack_require__(/*! @angular/core */ 8259));
-const i1 = tslib_1.__importStar(__webpack_require__(/*! ./courses/courses.service */ 4745));
-const i2 = tslib_1.__importStar(__webpack_require__(/*! ./spellcheck/services/dictionary-manager.service */ 3794));
-const i3 = tslib_1.__importStar(__webpack_require__(/*! ./spellcheck/spell-check-validator/spell-check-validator.component */ 5628));
+const i0 = __webpack_require__(/*! @angular/core */ 3184);
+const i1 = __webpack_require__(/*! ./courses/courses.service */ 4745);
+const i2 = __webpack_require__(/*! @angular/common */ 6362);
+const i3 = __webpack_require__(/*! ./courses/course-card/course-card.component */ 5126);
+const i4 = __webpack_require__(/*! ./courses/course-image/course-image.component */ 8360);
+function AppComponent_course_card_7_Template(rf, ctx) { if (rf & 1) {
+    const _r3 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "course-card", 7);
+    i0.ɵɵlistener("courseChanged", function AppComponent_course_card_7_Template_course_card_courseChanged_0_listener($event) { i0.ɵɵrestoreView(_r3); const ctx_r2 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r2.save($event)); });
+    i0.ɵɵelement(1, "course-image", 8);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const course_r1 = ctx.$implicit;
+    i0.ɵɵproperty("course", course_r1);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("src", course_r1.iconUrl);
+} }
 class AppComponent {
-    constructor(coursesService, 
-    //@Inject(CONFIG_TOKEN) private config: AppConfig,
-    injector, dictionaryManagerService) {
+    constructor(coursesService, config, injector) {
         this.coursesService = coursesService;
+        this.config = config;
         this.injector = injector;
-        this.dictionaryManagerService = dictionaryManagerService;
         this.courses = db_data_1.COURSES;
         this.coursesTotal = this.courses.length;
-        this.nonWordsArray = ["ילדד", "גרלל", "בןן"];
-        this.txt = "";
     }
     ngOnInit() {
         const htmlElement = (0, elements_1.createCustomElement)(course_title_component_1.CourseTitleComponent, { injector: this.injector });
@@ -41,29 +50,33 @@ class AppComponent {
         this.coursesService.saveCourse(course)
             .subscribe(() => console.log('Course Saved!'));
     }
-    rebuildNonWordsArray(textAreaContent) {
-        if (textAreaContent) {
-            let userTextArray = textAreaContent.split(/[\s,.]+/).filter(element => element);
-            for (let element = 0; element < userTextArray.length; element++)
-                if (!this.nonWordsArray.includes(userTextArray[element])) {
-                    if (!this.dictionaryManagerService.search(userTextArray[element])) {
-                        this.nonWordsArray.push(userTextArray[element]);
-                    }
-                }
-        }
-    }
 }
 exports.AppComponent = AppComponent;
-AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(i0.ɵɵdirectiveInject(i1.CoursesService), i0.ɵɵdirectiveInject(i0.Injector), i0.ɵɵdirectiveInject(i2.DictionaryManagerService)); };
-AppComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: AppComponent, selectors: [["app-root"]], decls: 3, vars: 1, consts: [[3, "nonWordsArray"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
-        i0.ɵɵelementStart(0, "h1");
-        i0.ɵɵtext(1, "spell check");
+AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(i0.ɵɵdirectiveInject(i1.CoursesService), i0.ɵɵdirectiveInject(config_1.CONFIG_TOKEN), i0.ɵɵdirectiveInject(i0.Injector)); };
+AppComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: AppComponent, selectors: [["app-root"]], decls: 8, vars: 1, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        /**
+         * @suppress {msgDescriptions}
+         */
+        const MSG_EXTERNAL_5048677437444385397$$SRC_APP_APP_COMPONENT_TS_1 = goog.getMsg("Edit Course");
+        i18n_0 = MSG_EXTERNAL_5048677437444385397$$SRC_APP_APP_COMPONENT_TS_1;
+    }
+    else {
+        i18n_0 = $localize `:␟756b2b2744938130877e47fd8e697024cb532092␟5048677437444385397:Edit Course`;
+    } return [[1, "top-menu"], ["src", "https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png", 1, "logo"], [1, "demo"], [3, "click"], i18n_0, [1, "courses"], ["type", "beginner", 3, "course", "courseChanged", 4, "ngFor", "ngForOf"], ["type", "beginner", 3, "course", "courseChanged"], [3, "src"]]; }, template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵelementStart(0, "div", 0);
+        i0.ɵɵelement(1, "img", 1);
         i0.ɵɵelementEnd();
-        i0.ɵɵelement(2, "spell-check-validator", 0);
+        i0.ɵɵelementStart(2, "div")(3, "div", 2)(4, "button", 3);
+        i0.ɵɵlistener("click", function AppComponent_Template_button_click_4_listener() { return ctx.onEditCourse(); });
+        i0.ɵɵi18n(5, 4);
+        i0.ɵɵelementEnd()();
+        i0.ɵɵelementStart(6, "div", 5);
+        i0.ɵɵtemplate(7, AppComponent_course_card_7_Template, 2, 2, "course-card", 6);
+        i0.ɵɵelementEnd()();
     } if (rf & 2) {
-        i0.ɵɵadvance(2);
-        i0.ɵɵproperty("nonWordsArray", ctx.nonWordsArray);
-    } }, dependencies: [i3.SpellCheckValidatorComponent], styles: [".top-menu[_ngcontent-%COMP%] {\r\n    background: #1976d2;\r\n    padding: 2px 15px;\r\n}\r\n\r\n.logo[_ngcontent-%COMP%] {\r\n  max-height: 55px;\r\n}\r\n\r\n.courses[_ngcontent-%COMP%] {\r\n    max-width: 400px;\r\n    margin: 50px auto;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFDQTtJQUNJLG1CQUFtQjtJQUNuQixpQkFBaUI7QUFDckI7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEI7O0FBR0E7SUFDSSxnQkFBZ0I7SUFDaEIsaUJBQWlCO0FBQ3JCIiwiZmlsZSI6ImFwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcbi50b3AtbWVudSB7XHJcbiAgICBiYWNrZ3JvdW5kOiAjMTk3NmQyO1xyXG4gICAgcGFkZGluZzogMnB4IDE1cHg7XHJcbn1cclxuXHJcbi5sb2dvIHtcclxuICBtYXgtaGVpZ2h0OiA1NXB4O1xyXG59XHJcblxyXG5cclxuLmNvdXJzZXMge1xyXG4gICAgbWF4LXdpZHRoOiA0MDBweDtcclxuICAgIG1hcmdpbjogNTBweCBhdXRvO1xyXG59XHJcblxyXG5cclxuXHJcblxyXG5cclxuIl19 */"] });
+        i0.ɵɵadvance(7);
+        i0.ɵɵproperty("ngForOf", ctx.courses);
+    } }, dependencies: [i2.NgForOf, i3.CourseCardComponent, i4.CourseImageComponent], styles: [".top-menu[_ngcontent-%COMP%] {\r\n    background: #1976d2;\r\n    padding: 2px 15px;\r\n}\r\n\r\n.logo[_ngcontent-%COMP%] {\r\n  max-height: 55px;\r\n}\r\n\r\n.courses[_ngcontent-%COMP%] {\r\n    max-width: 400px;\r\n    margin: 50px auto;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFDQTtJQUNJLG1CQUFtQjtJQUNuQixpQkFBaUI7QUFDckI7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEI7O0FBR0E7SUFDSSxnQkFBZ0I7SUFDaEIsaUJBQWlCO0FBQ3JCIiwiZmlsZSI6ImFwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcbi50b3AtbWVudSB7XHJcbiAgICBiYWNrZ3JvdW5kOiAjMTk3NmQyO1xyXG4gICAgcGFkZGluZzogMnB4IDE1cHg7XHJcbn1cclxuXHJcbi5sb2dvIHtcclxuICBtYXgtaGVpZ2h0OiA1NXB4O1xyXG59XHJcblxyXG5cclxuLmNvdXJzZXMge1xyXG4gICAgbWF4LXdpZHRoOiA0MDBweDtcclxuICAgIG1hcmdpbjogNTBweCBhdXRvO1xyXG59XHJcblxyXG5cclxuXHJcblxyXG5cclxuIl19 */"] });
 
 
 /***/ }),
@@ -77,34 +90,49 @@ AppComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: AppComponent, 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.AppModule = void 0;
-const tslib_1 = __webpack_require__(/*! tslib */ 3786);
-const platform_browser_1 = __webpack_require__(/*! @angular/platform-browser */ 7532);
+const platform_browser_1 = __webpack_require__(/*! @angular/platform-browser */ 318);
 const app_component_1 = __webpack_require__(/*! ./app.component */ 5041);
-const animations_1 = __webpack_require__(/*! @angular/platform-browser/animations */ 6263);
-const http_1 = __webpack_require__(/*! @angular/common/http */ 3690);
+const animations_1 = __webpack_require__(/*! @angular/platform-browser/animations */ 3598);
+const http_1 = __webpack_require__(/*! @angular/common/http */ 8784);
 const courses_module_1 = __webpack_require__(/*! ./courses/courses.module */ 3170);
 const course_title_component_1 = __webpack_require__(/*! ./course-title/course-title.component */ 7583);
-const spell_check_module_1 = __webpack_require__(/*! ./spellcheck/spell-check.module */ 1488);
-const forms_1 = __webpack_require__(/*! @angular/forms */ 6410);
-const i0 = tslib_1.__importStar(__webpack_require__(/*! @angular/core */ 8259));
+const i0 = __webpack_require__(/*! @angular/core */ 3184);
 class AppModule {
 }
 exports.AppModule = AppModule;
 AppModule.ɵfac = function AppModule_Factory(t) { return new (t || AppModule)(); };
 AppModule.ɵmod = /*@__PURE__*/ i0.ɵɵdefineNgModule({ type: AppModule, bootstrap: [app_component_1.AppComponent] });
-AppModule.ɵinj = /*@__PURE__*/ i0.ɵɵdefineInjector({ providers: [], imports: [forms_1.FormsModule,
-        platform_browser_1.BrowserModule,
+AppModule.ɵinj = /*@__PURE__*/ i0.ɵɵdefineInjector({ providers: [], imports: [platform_browser_1.BrowserModule,
         animations_1.BrowserAnimationsModule,
         http_1.HttpClientModule,
-        courses_module_1.CoursesModule,
-        spell_check_module_1.SpellCheckModule] });
+        courses_module_1.CoursesModule] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(AppModule, { declarations: [app_component_1.AppComponent,
-        course_title_component_1.CourseTitleComponent], imports: [forms_1.FormsModule,
-        platform_browser_1.BrowserModule,
+        course_title_component_1.CourseTitleComponent], imports: [platform_browser_1.BrowserModule,
         animations_1.BrowserAnimationsModule,
         http_1.HttpClientModule,
-        courses_module_1.CoursesModule,
-        spell_check_module_1.SpellCheckModule] }); })();
+        courses_module_1.CoursesModule] }); })();
+
+
+/***/ }),
+
+/***/ 9698:
+/*!***************************!*\
+  !*** ./src/app/config.ts ***!
+  \***************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.CONFIG_TOKEN = exports.APP_CONFIG = void 0;
+const core_1 = __webpack_require__(/*! @angular/core */ 3184);
+exports.APP_CONFIG = {
+    apiUrl: 'http://localhost:9000',
+    courseCacheSize: 10
+};
+exports.CONFIG_TOKEN = new core_1.InjectionToken('CONFIG_TOKEN', {
+    providedIn: 'root',
+    factory: () => exports.APP_CONFIG
+});
 
 
 /***/ }),
@@ -118,8 +146,7 @@ AppModule.ɵinj = /*@__PURE__*/ i0.ɵɵdefineInjector({ providers: [], imports: 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.CourseTitleComponent = void 0;
-const tslib_1 = __webpack_require__(/*! tslib */ 3786);
-const i0 = tslib_1.__importStar(__webpack_require__(/*! @angular/core */ 8259));
+const i0 = __webpack_require__(/*! @angular/core */ 3184);
 class CourseTitleComponent {
     constructor() { }
     ngOnInit() {
@@ -148,11 +175,10 @@ CourseTitleComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: Course
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.CourseCardComponent = void 0;
-const tslib_1 = __webpack_require__(/*! tslib */ 3786);
-const core_1 = __webpack_require__(/*! @angular/core */ 8259);
-const i0 = tslib_1.__importStar(__webpack_require__(/*! @angular/core */ 8259));
-const i1 = tslib_1.__importStar(__webpack_require__(/*! ../courses.service */ 4745));
-const i2 = tslib_1.__importStar(__webpack_require__(/*! @angular/common */ 8750));
+const core_1 = __webpack_require__(/*! @angular/core */ 3184);
+const i0 = __webpack_require__(/*! @angular/core */ 3184);
+const i1 = __webpack_require__(/*! ../courses.service */ 4745);
+const i2 = __webpack_require__(/*! @angular/common */ 6362);
 function CourseCardComponent_div_0_ng_content_4_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵprojection(0, 0, ["*ngIf", "course.iconUrl"]);
 } }
@@ -242,8 +268,7 @@ CourseCardComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: CourseC
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.CourseImageComponent = void 0;
-const tslib_1 = __webpack_require__(/*! tslib */ 3786);
-const i0 = tslib_1.__importStar(__webpack_require__(/*! @angular/core */ 8259));
+const i0 = __webpack_require__(/*! @angular/core */ 3184);
 class CourseImageComponent {
     constructor() { }
     ngOnInit() {
@@ -272,15 +297,14 @@ CourseImageComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: Course
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.CoursesModule = void 0;
-const tslib_1 = __webpack_require__(/*! tslib */ 3786);
-const common_1 = __webpack_require__(/*! @angular/common */ 8750);
+const common_1 = __webpack_require__(/*! @angular/common */ 6362);
 const course_card_component_1 = __webpack_require__(/*! ./course-card/course-card.component */ 5126);
 const course_image_component_1 = __webpack_require__(/*! ./course-image/course-image.component */ 8360);
 const courses_service_1 = __webpack_require__(/*! ./courses.service */ 4745);
 const highlighted_directive_1 = __webpack_require__(/*! ./directives/highlighted.directive */ 5112);
 const ngx_unless_directive_1 = __webpack_require__(/*! ./directives/ngx-unless.directive */ 4856);
 const filter_by_category_pipe_1 = __webpack_require__(/*! ./filter-by-category.pipe */ 4137);
-const i0 = tslib_1.__importStar(__webpack_require__(/*! @angular/core */ 8259));
+const i0 = __webpack_require__(/*! @angular/core */ 3184);
 class CoursesModule {
 }
 exports.CoursesModule = CoursesModule;
@@ -307,10 +331,9 @@ CoursesModule.ɵinj = /*@__PURE__*/ i0.ɵɵdefineInjector({ providers: [courses_
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.CoursesService = void 0;
-const tslib_1 = __webpack_require__(/*! tslib */ 3786);
-const http_1 = __webpack_require__(/*! @angular/common/http */ 3690);
-const i0 = tslib_1.__importStar(__webpack_require__(/*! @angular/core */ 8259));
-const i1 = tslib_1.__importStar(__webpack_require__(/*! @angular/common/http */ 3690));
+const http_1 = __webpack_require__(/*! @angular/common/http */ 8784);
+const i0 = __webpack_require__(/*! @angular/core */ 3184);
+const i1 = __webpack_require__(/*! @angular/common/http */ 8784);
 let counter = 0;
 class CoursesService {
     constructor(http) {
@@ -346,10 +369,9 @@ CoursesService.ɵprov = /*@__PURE__*/ i0.ɵɵdefineInjectable({ token: CoursesSe
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.HighlightedDirective = void 0;
-const tslib_1 = __webpack_require__(/*! tslib */ 3786);
-const core_1 = __webpack_require__(/*! @angular/core */ 8259);
-const i0 = tslib_1.__importStar(__webpack_require__(/*! @angular/core */ 8259));
-const i1 = tslib_1.__importStar(__webpack_require__(/*! ../courses.service */ 4745));
+const core_1 = __webpack_require__(/*! @angular/core */ 3184);
+const i0 = __webpack_require__(/*! @angular/core */ 3184);
+const i1 = __webpack_require__(/*! ../courses.service */ 4745);
 class HighlightedDirective {
     constructor(coursesService) {
         this.coursesService = coursesService;
@@ -394,8 +416,7 @@ HighlightedDirective.ɵdir = /*@__PURE__*/ i0.ɵɵdefineDirective({ type: Highli
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.NgxUnlessDirective = void 0;
-const tslib_1 = __webpack_require__(/*! tslib */ 3786);
-const i0 = tslib_1.__importStar(__webpack_require__(/*! @angular/core */ 8259));
+const i0 = __webpack_require__(/*! @angular/core */ 3184);
 class NgxUnlessDirective {
     constructor(templateRef, viewContainer) {
         this.templateRef = templateRef;
@@ -429,8 +450,7 @@ NgxUnlessDirective.ɵdir = /*@__PURE__*/ i0.ɵɵdefineDirective({ type: NgxUnles
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.FilterByCategoryPipe = void 0;
-const tslib_1 = __webpack_require__(/*! tslib */ 3786);
-const i0 = tslib_1.__importStar(__webpack_require__(/*! @angular/core */ 8259));
+const i0 = __webpack_require__(/*! @angular/core */ 3184);
 class FilterByCategoryPipe {
     transform(courses, category) {
         console.log('Called transform()');
@@ -440,215 +460,6 @@ class FilterByCategoryPipe {
 exports.FilterByCategoryPipe = FilterByCategoryPipe;
 FilterByCategoryPipe.ɵfac = function FilterByCategoryPipe_Factory(t) { return new (t || FilterByCategoryPipe)(); };
 FilterByCategoryPipe.ɵpipe = /*@__PURE__*/ i0.ɵɵdefinePipe({ name: "filterByCategory", type: FilterByCategoryPipe, pure: true });
-
-
-/***/ }),
-
-/***/ 3794:
-/*!*******************************************************************!*\
-  !*** ./src/app/spellcheck/services/dictionary-manager.service.ts ***!
-  \*******************************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.DictionaryManagerService = void 0;
-const tslib_1 = __webpack_require__(/*! tslib */ 3786);
-const i0 = tslib_1.__importStar(__webpack_require__(/*! @angular/core */ 8259));
-const i1 = tslib_1.__importStar(__webpack_require__(/*! @angular/common/http */ 3690));
-class DictionaryManagerService {
-    constructor(http) {
-        this.http = http;
-        this.root = new TrieNode(null);
-        http.get("/api/trie").subscribe(res => {
-            if (res && res.data) {
-                if (JSON.stringify(res.data) !== JSON.stringify({}))
-                    this.root = res.data;
-            }
-        });
-    }
-    insert(word) {
-        let current = this.root;
-        // iterate through all the characters of word
-        for (let character of word) {
-            // if node doesn't have the current character as child, insert it
-            if (current.children[character] === undefined) {
-                current.children[character] = new TrieNode(character);
-            }
-            // move down, to insert next character
-            current = current.children[character];
-        }
-        // mark the last inserted character as end of the word
-        current.isEndOfWord = true;
-        this.updateFile();
-        //this.httpservice.updateTrie(this.root);
-    }
-    bulkInsert(list) {
-        list.forEach(element => {
-            this.insert(element);
-        });
-        this.updateFile();
-    }
-    populateFromFile() {
-        this.http.get("/api/trie/populateFromFile").subscribe(res => {
-            if (res && res.data) {
-                if (JSON.stringify(res.data) !== JSON.stringify({}))
-                    this.root = res.data;
-            }
-        });
-    }
-    updateFile() {
-        //this.coursesService.saveTrie(this.root);
-    }
-    search(word) {
-        let current = this.root;
-        // iterate through all the characters of word
-        for (let character of word) {
-            if (current.children[character] === undefined) {
-                // could not find this character in sequence, return false
-                return false;
-            }
-            // move down, to match next character
-            current = current.children[character];
-        }
-        // found all characters, return true if last character is end of a word
-        return current.isEndOfWord;
-    }
-}
-exports.DictionaryManagerService = DictionaryManagerService;
-DictionaryManagerService.ɵfac = function DictionaryManagerService_Factory(t) { return new (t || DictionaryManagerService)(i0.ɵɵinject(i1.HttpClient)); };
-DictionaryManagerService.ɵprov = /*@__PURE__*/ i0.ɵɵdefineInjectable({ token: DictionaryManagerService, factory: DictionaryManagerService.ɵfac, providedIn: 'root' });
-class TrieNode {
-    /**
-     *
-     */
-    constructor(value) {
-        this.value = '';
-        this.isEndOfWord = false; // false by default, a green node means this flag is true
-        this.children = {};
-        this.value = value;
-    }
-    populateTrieNode(value) {
-        this.value = value;
-        this.isEndOfWord = false; // false by default, a green node means this flag is true
-        this.children = {}; // children are stored as Map, where key is the letter and value is a TrieNode for that letter 
-    }
-}
-
-
-/***/ }),
-
-/***/ 5628:
-/*!*************************************************************************************!*\
-  !*** ./src/app/spellcheck/spell-check-validator/spell-check-validator.component.ts ***!
-  \*************************************************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.SpellCheckValidatorComponent = void 0;
-const tslib_1 = __webpack_require__(/*! tslib */ 3786);
-const i0 = tslib_1.__importStar(__webpack_require__(/*! @angular/core */ 8259));
-const i1 = tslib_1.__importStar(__webpack_require__(/*! ../services/dictionary-manager.service */ 3794));
-const i2 = tslib_1.__importStar(__webpack_require__(/*! @angular/forms */ 6410));
-const _c0 = ["spellcheckerrorsholder"];
-class SpellCheckValidatorComponent {
-    constructor(dictionaryManagerService) {
-        this.dictionaryManagerService = dictionaryManagerService;
-        this.textValue = "";
-        this.nonWordsArray = [];
-        this.doneTypingInterval = 1000;
-    }
-    handleScroll() {
-    }
-    onTextAreaChange(content) {
-        clearTimeout(this.typingTimer);
-        this.typingTimer = setTimeout(this.populateNonWordsArray.bind(this, content), this.doneTypingInterval);
-    }
-    populateNonWordsArray(txt) {
-        if (txt) {
-            this.nonWordsArray = [];
-            let userTextArray = txt.split(/[\s,.]+/).filter(element => element);
-            for (let element = 0; element < userTextArray.length; element++)
-                if (!this.nonWordsArray.includes(userTextArray[element])) {
-                    if (!this.dictionaryManagerService.search(userTextArray[element])) {
-                        this.nonWordsArray.push(userTextArray[element]);
-                    }
-                }
-            txt = txt ? txt
-                .replace(/\n$/g, "\n\n") : '';
-            this.nonWordsArray.forEach(x => {
-                txt = txt
-                    .replace(new RegExp(x + '[(?!\\s)|(?!,)|(?!.)]|' + x + '$', 'g'), '<mark style="border-bottom: 1px solid red;background-color: transparent;" class="mark">$&</mark>');
-            });
-            this.spellcheckerrorsholder.nativeElement.innerHTML = txt;
-        }
-        else {
-            this.spellcheckerrorsholder.nativeElement.innerHTML = "";
-        }
-    }
-    applyHighlights(text) {
-    }
-    createTrie() {
-        //const trie = this.dictionaryManagerService;
-        // trie.populateFromFile();
-        // insert few words
-        //trie.insert("CAT");
-        //trie.insert("DOG");
-        //trie.insert("CATS");
-        //trie.insert("FISH");
-        // search something
-        // trie.search("MAT") // false
-        // trie.search("DOG") // true  
-    }
-}
-exports.SpellCheckValidatorComponent = SpellCheckValidatorComponent;
-SpellCheckValidatorComponent.ɵfac = function SpellCheckValidatorComponent_Factory(t) { return new (t || SpellCheckValidatorComponent)(i0.ɵɵdirectiveInject(i1.DictionaryManagerService)); };
-SpellCheckValidatorComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: SpellCheckValidatorComponent, selectors: [["spell-check-validator"]], viewQuery: function SpellCheckValidatorComponent_Query(rf, ctx) { if (rf & 1) {
-        i0.ɵɵviewQuery(_c0, 5);
-    } if (rf & 2) {
-        let _t;
-        i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.spellcheckerrorsholder = _t.first);
-    } }, inputs: { nonWordsArray: "nonWordsArray" }, decls: 10, vars: 1, consts: [[1, "container"], [1, "backdrop"], ["backdrop", ""], [1, "highlights"], ["spellcheckerrorsholder", ""], [3, "ngModel", "ngModelChange", "scroll"], ["textarea", ""], [3, "click"]], template: function SpellCheckValidatorComponent_Template(rf, ctx) { if (rf & 1) {
-        i0.ɵɵelementStart(0, "div", 0)(1, "div", 1, 2);
-        i0.ɵɵelement(3, "div", 3, 4);
-        i0.ɵɵelementEnd();
-        i0.ɵɵelementStart(5, "textarea", 5, 6);
-        i0.ɵɵlistener("ngModelChange", function SpellCheckValidatorComponent_Template_textarea_ngModelChange_5_listener($event) { return ctx.onTextAreaChange($event); })("scroll", function SpellCheckValidatorComponent_Template_textarea_scroll_5_listener() { return ctx.handleScroll(); });
-        i0.ɵɵelementEnd()();
-        i0.ɵɵelementStart(7, "div")(8, "button", 7);
-        i0.ɵɵlistener("click", function SpellCheckValidatorComponent_Template_button_click_8_listener() { return ctx.createTrie(); });
-        i0.ɵɵtext(9, "createTrie");
-        i0.ɵɵelementEnd()();
-    } if (rf & 2) {
-        i0.ɵɵadvance(5);
-        i0.ɵɵproperty("ngModel", ctx.textValue);
-    } }, dependencies: [i2.DefaultValueAccessor, i2.NgControlStatus, i2.NgModel], styles: ["*[_ngcontent-%COMP%], *[_ngcontent-%COMP%]::before, *[_ngcontent-%COMP%]::after {\r\n  box-sizing: border-box;\r\n}\r\n\r\n.container[_ngcontent-%COMP%], .backdrop[_ngcontent-%COMP%], textarea[_ngcontent-%COMP%] {\r\n  width: 460px;\r\n  height: 180px;\r\n}\r\n\r\n.highlights[_ngcontent-%COMP%], textarea[_ngcontent-%COMP%] {\r\n  padding: 10px;\r\n  font: 20px/28px \"Open Sans\", sans-serif;\r\n  letter-spacing: 1px;\r\n}\r\n\r\n.container[_ngcontent-%COMP%] {\r\n  display: block;\r\n  margin: 0 auto;\r\n  transform: translateZ(0);\r\n  -webkit-text-size-adjust: none;\r\n}\r\n\r\n.backdrop[_ngcontent-%COMP%] {\r\n  position: absolute;\r\n  z-index: 1;\r\n  border: 2px solid #685972;\r\n  background-color: #fff;\r\n  overflow: auto;\r\n  pointer-events: none;\r\n  transition: transform 1s;\r\n}\r\n\r\n.highlights[_ngcontent-%COMP%] {\r\n  white-space: pre-wrap;\r\n  word-wrap: break-word;\r\n  color: transparent;\r\n}\r\n\r\ntextarea[_ngcontent-%COMP%] {\r\n  display: block;\r\n  position: absolute;\r\n  z-index: 2;\r\n  margin: 0;\r\n  border: 2px solid #74637f;\r\n  border-radius: 0;\r\n  color: #444;\r\n  background-color: transparent;\r\n  overflow: auto;\r\n  resize: none;\r\n  transition: transform 1s;\r\n}\r\n\r\n  .mark {\r\n  border-radius: 3px;\r\n  color: transparent;\r\n  -webkit-text-decoration: wavy;\r\n          text-decoration: wavy;\r\n  border-bottom: 1px solid red;\r\n  background-color: transparent;\r\n}\r\n\r\n.perspective[_ngcontent-%COMP%]   textarea[_ngcontent-%COMP%] {\r\n  transform: perspective(1500px) translateX(155px) rotateY(45deg) scale(1.1);\r\n}\r\n\r\ntextarea[_ngcontent-%COMP%]:focus, button[_ngcontent-%COMP%]:focus {\r\n  outline: none;\r\n  box-shadow: 0 0 0 2px #c6aada;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNwZWxsLWNoZWNrLXZhbGlkYXRvci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7RUFHRSxzQkFBc0I7QUFDeEI7O0FBRUE7OztFQUdFLFlBQVk7RUFDWixhQUFhO0FBQ2Y7O0FBRUE7O0VBRUUsYUFBYTtFQUNiLHVDQUF1QztFQUN2QyxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsY0FBYztFQUNkLHdCQUF3QjtFQUN4Qiw4QkFBOEI7QUFDaEM7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsVUFBVTtFQUNWLHlCQUF5QjtFQUN6QixzQkFBc0I7RUFDdEIsY0FBYztFQUNkLG9CQUFvQjtFQUNwQix3QkFBd0I7QUFDMUI7O0FBRUE7RUFDRSxxQkFBcUI7RUFDckIscUJBQXFCO0VBQ3JCLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLGNBQWM7RUFDZCxrQkFBa0I7RUFDbEIsVUFBVTtFQUNWLFNBQVM7RUFDVCx5QkFBeUI7RUFDekIsZ0JBQWdCO0VBQ2hCLFdBQVc7RUFDWCw2QkFBNkI7RUFDN0IsY0FBYztFQUNkLFlBQVk7RUFDWix3QkFBd0I7QUFDMUI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsa0JBQWtCO0VBQ2xCLDZCQUFxQjtVQUFyQixxQkFBcUI7RUFDckIsNEJBQTRCO0VBQzVCLDZCQUE2QjtBQUMvQjs7QUFFQTtFQUNFLDBFQUEwRTtBQUM1RTs7QUFFQTs7RUFFRSxhQUFhO0VBQ2IsNkJBQTZCO0FBQy9CIiwiZmlsZSI6InNwZWxsLWNoZWNrLXZhbGlkYXRvci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiKixcclxuKjo6YmVmb3JlLFxyXG4qOjphZnRlciB7XHJcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxufVxyXG5cclxuLmNvbnRhaW5lcixcclxuLmJhY2tkcm9wLFxyXG50ZXh0YXJlYSB7XHJcbiAgd2lkdGg6IDQ2MHB4O1xyXG4gIGhlaWdodDogMTgwcHg7XHJcbn1cclxuXHJcbi5oaWdobGlnaHRzLFxyXG50ZXh0YXJlYSB7XHJcbiAgcGFkZGluZzogMTBweDtcclxuICBmb250OiAyMHB4LzI4cHggXCJPcGVuIFNhbnNcIiwgc2Fucy1zZXJpZjtcclxuICBsZXR0ZXItc3BhY2luZzogMXB4O1xyXG59XHJcblxyXG4uY29udGFpbmVyIHtcclxuICBkaXNwbGF5OiBibG9jaztcclxuICBtYXJnaW46IDAgYXV0bztcclxuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVooMCk7XHJcbiAgLXdlYmtpdC10ZXh0LXNpemUtYWRqdXN0OiBub25lO1xyXG59XHJcblxyXG4uYmFja2Ryb3Age1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB6LWluZGV4OiAxO1xyXG4gIGJvcmRlcjogMnB4IHNvbGlkICM2ODU5NzI7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcclxuICBvdmVyZmxvdzogYXV0bztcclxuICBwb2ludGVyLWV2ZW50czogbm9uZTtcclxuICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMXM7XHJcbn1cclxuXHJcbi5oaWdobGlnaHRzIHtcclxuICB3aGl0ZS1zcGFjZTogcHJlLXdyYXA7XHJcbiAgd29yZC13cmFwOiBicmVhay13b3JkO1xyXG4gIGNvbG9yOiB0cmFuc3BhcmVudDtcclxufVxyXG5cclxudGV4dGFyZWEge1xyXG4gIGRpc3BsYXk6IGJsb2NrO1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB6LWluZGV4OiAyO1xyXG4gIG1hcmdpbjogMDtcclxuICBib3JkZXI6IDJweCBzb2xpZCAjNzQ2MzdmO1xyXG4gIGJvcmRlci1yYWRpdXM6IDA7XHJcbiAgY29sb3I6ICM0NDQ7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XHJcbiAgb3ZlcmZsb3c6IGF1dG87XHJcbiAgcmVzaXplOiBub25lO1xyXG4gIHRyYW5zaXRpb246IHRyYW5zZm9ybSAxcztcclxufVxyXG5cclxuOjpuZy1kZWVwIC5tYXJrIHtcclxuICBib3JkZXItcmFkaXVzOiAzcHg7XHJcbiAgY29sb3I6IHRyYW5zcGFyZW50O1xyXG4gIHRleHQtZGVjb3JhdGlvbjogd2F2eTtcclxuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgcmVkO1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xyXG59XHJcblxyXG4ucGVyc3BlY3RpdmUgdGV4dGFyZWEge1xyXG4gIHRyYW5zZm9ybTogcGVyc3BlY3RpdmUoMTUwMHB4KSB0cmFuc2xhdGVYKDE1NXB4KSByb3RhdGVZKDQ1ZGVnKSBzY2FsZSgxLjEpO1xyXG59XHJcblxyXG50ZXh0YXJlYTpmb2N1cyxcclxuYnV0dG9uOmZvY3VzIHtcclxuICBvdXRsaW5lOiBub25lO1xyXG4gIGJveC1zaGFkb3c6IDAgMCAwIDJweCAjYzZhYWRhO1xyXG59XHJcbiJdfQ== */"] });
-
-
-/***/ }),
-
-/***/ 1488:
-/*!**************************************************!*\
-  !*** ./src/app/spellcheck/spell-check.module.ts ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.SpellCheckModule = void 0;
-const tslib_1 = __webpack_require__(/*! tslib */ 3786);
-const common_1 = __webpack_require__(/*! @angular/common */ 8750);
-const spell_check_validator_component_1 = __webpack_require__(/*! ./spell-check-validator/spell-check-validator.component */ 5628);
-const forms_1 = __webpack_require__(/*! @angular/forms */ 6410);
-const i0 = tslib_1.__importStar(__webpack_require__(/*! @angular/core */ 8259));
-class SpellCheckModule {
-}
-exports.SpellCheckModule = SpellCheckModule;
-SpellCheckModule.ɵfac = function SpellCheckModule_Factory(t) { return new (t || SpellCheckModule)(); };
-SpellCheckModule.ɵmod = /*@__PURE__*/ i0.ɵɵdefineNgModule({ type: SpellCheckModule });
-SpellCheckModule.ɵinj = /*@__PURE__*/ i0.ɵɵdefineInjector({ imports: [common_1.CommonModule, forms_1.FormsModule] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(SpellCheckModule, { declarations: [spell_check_validator_component_1.SpellCheckValidatorComponent], imports: [common_1.CommonModule, forms_1.FormsModule], exports: [spell_check_validator_component_1.SpellCheckValidatorComponent] }); })();
 
 
 /***/ }),
@@ -781,9 +592,8 @@ exports.environment = {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const tslib_1 = __webpack_require__(/*! tslib */ 3786);
-const __NgCli_bootstrap_1 = tslib_1.__importStar(__webpack_require__(/*! @angular/platform-browser */ 7532));
-const core_1 = __webpack_require__(/*! @angular/core */ 8259);
+const __NgCli_bootstrap_1 = __webpack_require__(/*! @angular/platform-browser */ 318);
+const core_1 = __webpack_require__(/*! @angular/core */ 3184);
 const app_module_1 = __webpack_require__(/*! ./app/app.module */ 6747);
 const environment_1 = __webpack_require__(/*! ./environments/environment */ 2340);
 if (environment_1.environment.production) {
