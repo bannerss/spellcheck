@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config ./proxy.json",
+    "startproxy": "ng serve --proxy-config ./proxy.json",
+    "start": "ng serve",
     "ngbuild": "ng build",
-	"build":"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
