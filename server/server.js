@@ -54,9 +54,9 @@ app.use(function(req, res, next) {
       next();
   });
 
-app.use('/', express.static(path.join(__dirname, 'src')));
+app.use('/', express.static(path.join(__dirname, 'server')));
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'src/index.html'));
+    res.sendFile(path.join(__dirname, 'server/index.html'));
 });
 const port = (process.env.PORT || 9000);
 const httpServer = app.listen(port, () => {
