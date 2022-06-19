@@ -1,6 +1,0 @@
-nodeProcessCountPerApplication:0
-asyncCompletionThreadCount:0
-flushResponse:true
-devErrorsEnabled:false
-maxRequestBufferSize:1860352
-maxConcurrentRequestsPerProcess:5120
