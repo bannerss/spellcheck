@@ -63,7 +63,7 @@ AppModule = tslib_1.__decorate([
     (0, common_1.Module)({
         imports: [
             serve_static_1.ServeStaticModule.forRoot({
-                rootPath: (0, path_1.join)(__dirname, 'ng-node'),
+                rootPath: (0, path_1.join)(__dirname, '..', 'ng-node'),
             }),
         ],
         controllers: [app_controller_1.AppController],
