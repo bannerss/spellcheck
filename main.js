@@ -6,7 +6,7 @@
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
-var _a, _b;
+var _a, _b, _c;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.AppController = void 0;
 const tslib_1 = __webpack_require__("tslib");
@@ -20,6 +20,9 @@ let AppController = class AppController {
     getData() {
         return this.appService.getData();
     }
+    getByeData() {
+        return this.appService.geByetData();
+    }
 };
 tslib_1.__decorate([
     (0, common_1.Get)('hello'),
@@ -27,9 +30,15 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:paramtypes", []),
     tslib_1.__metadata("design:returntype", typeof (_a = typeof api_interfaces_1.Message !== "undefined" && api_interfaces_1.Message) === "function" ? _a : Object)
 ], AppController.prototype, "getData", null);
+tslib_1.__decorate([
+    (0, common_1.Get)('bye'),
+    tslib_1.__metadata("design:type", Function),
+    tslib_1.__metadata("design:paramtypes", []),
+    tslib_1.__metadata("design:returntype", typeof (_b = typeof api_interfaces_1.Message !== "undefined" && api_interfaces_1.Message) === "function" ? _b : Object)
+], AppController.prototype, "getByeData", null);
 AppController = tslib_1.__decorate([
     (0, common_1.Controller)(),
-    tslib_1.__metadata("design:paramtypes", [typeof (_b = typeof app_service_1.AppService !== "undefined" && app_service_1.AppService) === "function" ? _b : Object])
+    tslib_1.__metadata("design:paramtypes", [typeof (_c = typeof app_service_1.AppService !== "undefined" && app_service_1.AppService) === "function" ? _c : Object])
 ], AppController);
 exports.AppController = AppController;
 
@@ -71,6 +80,9 @@ const common_1 = __webpack_require__("@nestjs/common");
 let AppService = class AppService {
     getData() {
         return { message: 'Welcome to api!' };
+    }
+    geByetData() {
+        return { message: 'Bye fron api!' };
     }
 };
 AppService = tslib_1.__decorate([
