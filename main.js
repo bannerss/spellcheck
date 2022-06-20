@@ -53,13 +53,19 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.AppModule = void 0;
 const tslib_1 = __webpack_require__("tslib");
 const common_1 = __webpack_require__("@nestjs/common");
+const serve_static_1 = __webpack_require__("@nestjs/serve-static");
+const path_1 = __webpack_require__("path");
 const app_controller_1 = __webpack_require__("./apps/api/src/app/app.controller.ts");
 const app_service_1 = __webpack_require__("./apps/api/src/app/app.service.ts");
 let AppModule = class AppModule {
 };
 AppModule = tslib_1.__decorate([
     (0, common_1.Module)({
-        imports: [],
+        imports: [
+            serve_static_1.ServeStaticModule.forRoot({
+                rootPath: (0, path_1.join)(__dirname, '..', 'ng-node'),
+            }),
+        ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })
@@ -127,10 +133,24 @@ module.exports = require("@nestjs/core");
 
 /***/ }),
 
+/***/ "@nestjs/serve-static":
+/***/ ((module) => {
+
+module.exports = require("@nestjs/serve-static");
+
+/***/ }),
+
 /***/ "tslib":
 /***/ ((module) => {
 
 module.exports = require("tslib");
+
+/***/ }),
+
+/***/ "path":
+/***/ ((module) => {
+
+module.exports = require("path");
 
 /***/ })
 
